@@ -126,3 +126,12 @@ Wir haben dann eine [Einführung in Python](presentation/Python%20Einführung.pp
 ### Hausaufgaben
 
 Bei Interesse könnt ihr ein paar Aufgaben von [Project Euler](https://projecteuler.net/archives) lösen.
+
+## Vierter Nachmittag, 3.3.2021
+
+Wir haben die [Einführung in Python](presentation/Python%20Einführung.pptx) durchgearbeitet.
+
+## Fünfter Nachmittag, 10.3.2021
+
+Wir haben uns das Programmierparadigma [Objektorientierung](presentation/Python%20Objektorientierung.pptx) angeschaut, inklusive Übungen zur Umsetzung in Python.
+
