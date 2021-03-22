@@ -1,0 +1,4 @@
+EMPTY = 0
+HEAD = 1
+BLOCKED = 2
+UNKNOWN = 3
