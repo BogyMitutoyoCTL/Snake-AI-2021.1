@@ -205,12 +205,18 @@ Von diesen sehr einfachen Algorithmen haben wir einige zusammengestellt:
 
 #### Entscheidungsgrundlagen für Algorithmen
 
+Das Spielfeld ist folgendermaßen aufgebaut:
+
+​    ![Aufbau des Spielfelds](presentation/playground.png)
+
+Diese Richtung der Achsen ist in der Bildverarbeitung üblich. Euer Monitor hat z.B. ebenfalls die Ecke P(0|0) oben links und Q(1920|1080) unten rechts.
+
 Damit man sich nicht blind für eine Aktion entscheiden muss, bekommt man für die Entscheidung ein paar Grundlagen, und zwar im Parameter `info` vom Typ `GameData`. Darin sind allerhand Informationen zu finden, die man für Entscheidungen braucht:
 
-* `head_x` und `head_y`: wo der Kopf der Schlange sich befindet
+* `head_x` bzw. `head_y`: wo der Kopf der Schlange sich befindet. Das Ergebnis ist eine Zahl, entsprechend der Koordinate.
 * `snake_length`: Länge der Schlange
-* `direction`: Aktuelle Laufrichtung der Schlange
-* `food_x` und `food_y`: wo sich das Futter befindet
+* `direction`: Aktuelle Laufrichtung der Schlange. Das Ergebnis ist ein String mit den Werten `"north"`, `"east"`, `"south"` oder `"west"`.
+* `food_x` bzw. `food_y`: wo sich das Futter befindet. Das Ergebnis ist eine Zahl, entsprechend der Koordinate.
 * `food_direction`: Richtung, in der sich das Futter befindet. Die Winkel sind dabei wie folgt:
   ![Richtungen](presentation/directions.png)
 * `food_distance_in_steps`: Schritte bis zum Futter (kürzester Weg, ohne Berücksichtigung von Hindernissen)
@@ -222,20 +228,16 @@ Ebenfalls nützlich sind einige Funktionen:
 
 * `can_move_to(x,y)`: findet heraus, ob an diese Position gelaufen werden kann, ohne zu sterben. Für X und Y setzt man dabei am besten eine Koordinate ein, die sich in der Nähe des Kopfes befindet, also, z.B.
 
-    ```python
+```python
 if info.can_move_to(info.head_x - 1, info.head_y):  # Ist links vom Kopf Platz?
       return "west"                                     # Dann kann man nach Westen fahren
-    ```
+```
 
 * `body_age(x,y)`: findet heraus, wie bald sich der Körper an dieser Stelle hier wegbewegt
 
 * `is_body(x,y)`, `is_food(x,y)` und `is_head(x,y)`: um abzufragen, um welche Sorte Kästchen es sich handelt
 
-Das Spielfeld ist dabei folgendermaßen aufgebaut:
 
-​    ![Aufbau des Spielfelds](presentation/playground.png)
-
-Diese Richtung der Achsen ist in der Bildverarbeitung üblich. Euer Monitor hat z.B. ebenfalls die Ecke P(0|0) oben links.
 
 #### Die Anzeige
 
