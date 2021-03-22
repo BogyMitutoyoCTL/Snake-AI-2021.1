@@ -143,7 +143,7 @@ Wir haben den Nutzen von [Versionskontrolle allgemein](presentation/Versionskont
 
 # BOGY Woche
 
-## Montag, 22.3.2021
+## Montag, 22.3.2021, Vormittag
 ### Repository klonen
 
 Wir haben die Datenbank von Github auf den Raspberry geklont mit
@@ -288,3 +288,32 @@ class B⸻(Algorithm):  # Passe den Klassen-Namen hier an
     def decide(self, info: GameData) -> str:
         # Programmiere hier
 ```
+
+## Montag, 22.3.2021, Nachmittag
+
+### Hamiltonweg
+
+Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise.
+
+Um den definierten Anfangspunkt O(0|0) zu erreichen kann man folgenden Code verwenden:
+
+```python
+class ZickZack(Algorithm):
+    def __init__(self):
+        super().__init__()
+        self.fahre = ["north"] * 10 + ["west"] * 5
+
+    def decide(self, info: GameData) -> str:
+        # Fahre zu Beginn einer Runde nach oben links
+        if len(self.fahre) > 0:
+            action = self.fahre[0]
+            del self.fahre[0]
+            return action
+        # Fahre im Zickzack nach unten
+        else:
+            ...
+```
+
+### Aufgabe: vervollständige den Weg
+
+Vervollständige den obigen Code an der Stelle `...`, so dass die Schlange im Zickzack nach unten fährt und auf der rechten Seite ein Kästchen übrig lässt, um wieder nach oben zu kommen.
