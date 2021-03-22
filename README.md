@@ -317,3 +317,22 @@ class ZickZack(Algorithm):
 ### Aufgabe: vervollständige den Weg
 
 Vervollständige den obigen Code an der Stelle `...`, so dass die Schlange im Zickzack nach unten fährt und auf der rechten Seite ein Kästchen übrig lässt, um wieder nach oben zu kommen.
+
+### Github Token für den Zugriff einrichten
+
+Damit der Zugriff auf Github einfacher wird und wir uns nicht ständig einloggen müssen, richten wir uns ein Github Token ein. Das geht folgendermaßen:
+
+1. Logge Dich auf Github ein und gehe zu den Einstellungen Deines Profils.
+
+   ![Github Settings](presentation/githubsettings.png)
+
+2. Gehe zu *Developer Settings* und dann *Personal Access Tokens*
+3. Klicke auf *Generate New Token*
+4. Gib dem Token einen Namen als Bedeutung, z.B. "Snake bei Mitutoyo".
+5. Setze ein Häkchen bei: **repo**, **read:org** und **gist**.
+6. Klicke auf *Generate Token*
+7. Klicke auf das Icon, um die Zahlenfolge in die Zwischenablage zu kopieren
+8. In PyCharm: gehe zu *File* / *Settings*
+9. Gehe zu *Version Control* / *GitHub*
+10. Klicke auf `+` und wähle "Login with Token..."
+11. Füge die Zahlenfolge in das Feld ein.
