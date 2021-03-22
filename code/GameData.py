@@ -10,7 +10,7 @@ class GameData:
         self.snake_length: int = 0
         self.head_x: int = 0
         self.head_y: int = 0
-        self.direction: str = "o"
+        self.direction: str = "north/east/south/west"  # Will be filled later
         self.walldistance_n: int = 0
         self.walldistance_e: int = 0
         self.walldistance_s: int = 0
