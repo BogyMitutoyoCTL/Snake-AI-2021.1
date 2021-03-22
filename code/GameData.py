@@ -10,7 +10,7 @@ class GameData:
         self.snake_length: int = 0
         self.head_x: int = 0
         self.head_y: int = 0
-        self.direction: str = "o"
+        self.direction: str = "north/east/south/west"  # Will be filled later
         self.walldistance_n: int = 0
         self.walldistance_e: int = 0
         self.walldistance_s: int = 0
@@ -126,6 +126,11 @@ class GameData:
         :return: Age of the body part, 0 is the head, maximum is the length of the snake
         """
         return self.body.index((x, y))
+
+    def can_do_action(self, direction: str) -> bool:
+        direction = self.relative_to_absolute(direction)
+        dx, dy = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}[direction]
+        return self.can_move_to(self.head_x + dx, self.head_y + dy)
 
     def can_move_to(self, x: int, y: int) -> bool:
         inside = self.field.pixel_is_inside_field(x, y)

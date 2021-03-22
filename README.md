@@ -143,7 +143,20 @@ Wir haben den Nutzen von [Versionskontrolle allgemein](presentation/Versionskont
 
 # BOGY Woche
 
-## Montag, 22.3.2021
+## Montag, 22.3.2021, Vormittag
+### Repository klonen
+
+Wir haben die Datenbank von Github auf den Raspberry geklont mit
+
+`git clone https://github.com/BogyMitutoyoCTL/Snake-AI-2021.1.git snake`
+
+Beim Ausprobieren ist uns aufgefallen, dass für NumPy und Python noch zwei Bibliotheken fehlen. Diese beiden Bibliotheken konnten wir mit folgenden Befehlen nachinstallieren:
+
+```bash
+sudo apt-get install libatlas-base-dev
+sudo apt install libsdl2-ttf-2.0-0
+```
+
 ### Erläuterung des bestehenden Codes
 
 Da wir uns auf das Machine Learning konzentrieren wollen, hat Mitutoyo das Snake-Spiel bereits implementiert. Über diese Implementierung haben wir uns einen Überblick verschafft.
@@ -192,12 +205,18 @@ Von diesen sehr einfachen Algorithmen haben wir einige zusammengestellt:
 
 #### Entscheidungsgrundlagen für Algorithmen
 
+Das Spielfeld ist folgendermaßen aufgebaut:
+
+​    ![Aufbau des Spielfelds](presentation/playground.png)
+
+Diese Richtung der Achsen ist in der Bildverarbeitung üblich. Euer Monitor hat z.B. ebenfalls die Ecke P(0|0) oben links und Q(1920|1080) unten rechts.
+
 Damit man sich nicht blind für eine Aktion entscheiden muss, bekommt man für die Entscheidung ein paar Grundlagen, und zwar im Parameter `info` vom Typ `GameData`. Darin sind allerhand Informationen zu finden, die man für Entscheidungen braucht:
 
-* `head_x` und `head_y`: wo der Kopf der Schlange sich befindet
+* `head_x` bzw. `head_y`: wo der Kopf der Schlange sich befindet. Das Ergebnis ist eine Zahl, entsprechend der Koordinate.
 * `snake_length`: Länge der Schlange
-* `direction`: Aktuelle Laufrichtung der Schlange
-* `food_x` und `food_y`: wo sich das Futter befindet
+* `direction`: Aktuelle Laufrichtung der Schlange. Das Ergebnis ist ein String mit den Werten `"north"`, `"east"`, `"south"` oder `"west"`.
+* `food_x` bzw. `food_y`: wo sich das Futter befindet. Das Ergebnis ist eine Zahl, entsprechend der Koordinate.
 * `food_direction`: Richtung, in der sich das Futter befindet. Die Winkel sind dabei wie folgt:
   ![Richtungen](presentation/directions.png)
 * `food_distance_in_steps`: Schritte bis zum Futter (kürzester Weg, ohne Berücksichtigung von Hindernissen)
@@ -207,17 +226,18 @@ Damit man sich nicht blind für eine Aktion entscheiden muss, bekommt man für d
 
 Ebenfalls nützlich sind einige Funktionen:
 
-* `can_move_to(x,y)`: findet heraus, ob an diese Position gelaufen werden kann, ohne zu sterben
+* `can_move_to(x,y)`: findet heraus, ob an diese Position gelaufen werden kann, ohne zu sterben. Für X und Y setzt man dabei am besten eine Koordinate ein, die sich in der Nähe des Kopfes befindet, also, z.B.
+
+```python
+if info.can_move_to(info.head_x - 1, info.head_y):  # Ist links vom Kopf Platz?
+      return "west"                                     # Dann kann man nach Westen fahren
+```
 
 * `body_age(x,y)`: findet heraus, wie bald sich der Körper an dieser Stelle hier wegbewegt
 
 * `is_body(x,y)`, `is_food(x,y)` und `is_head(x,y)`: um abzufragen, um welche Sorte Kästchen es sich handelt
 
-Das Spielfeld ist dabei folgendermaßen aufgebaut:
 
-​    ![Aufbau des Spielfelds](presentation/playground.png)
-
-Diese Richtung der Achsen ist in der Bildverarbeitung üblich. Euer Monitor hat z.B. ebenfalls die Ecke P(0|0) oben links.
 
 #### Die Anzeige
 
@@ -268,3 +288,51 @@ class B⸻(Algorithm):  # Passe den Klassen-Namen hier an
     def decide(self, info: GameData) -> str:
         # Programmiere hier
 ```
+
+## Montag, 22.3.2021, Nachmittag
+
+### Hamiltonweg
+
+Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise.
+
+Um den definierten Anfangspunkt O(0|0) zu erreichen kann man folgenden Code verwenden:
+
+```python
+class ZickZack(Algorithm):
+    def __init__(self):
+        super().__init__()
+        self.fahre = ["north"] * 10 + ["west"] * 5
+
+    def decide(self, info: GameData) -> str:
+        # Fahre zu Beginn einer Runde nach oben links
+        if len(self.fahre) > 0:
+            action = self.fahre[0]
+            del self.fahre[0]
+            return action
+        # Fahre im Zickzack nach unten
+        else:
+            ...
+```
+
+### Aufgabe: vervollständige den Weg
+
+Vervollständige den obigen Code an der Stelle `...`, so dass die Schlange im Zickzack nach unten fährt und auf der rechten Seite ein Kästchen übrig lässt, um wieder nach oben zu kommen.
+
+### Github Token für den Zugriff einrichten
+
+Damit der Zugriff auf Github einfacher wird und wir uns nicht ständig einloggen müssen, richten wir uns ein Github Token ein. Das geht folgendermaßen:
+
+1. Logge Dich auf Github ein und gehe zu den Einstellungen Deines Profils.
+
+   ![Github Settings](presentation/githubsettings.png)
+
+2. Gehe zu *Developer Settings* und dann *Personal Access Tokens*
+3. Klicke auf *Generate New Token*
+4. Gib dem Token einen Namen als Bedeutung, z.B. "Snake bei Mitutoyo".
+5. Setze ein Häkchen bei: **repo**, **read:org** und **gist**.
+6. Klicke auf *Generate Token*
+7. Klicke auf das Icon, um die Zahlenfolge in die Zwischenablage zu kopieren
+8. In PyCharm: gehe zu *File* / *Settings*
+9. Gehe zu *Version Control* / *GitHub*
+10. Klicke auf `+` und wähle "Login with Token..."
+11. Füge die Zahlenfolge in das Feld ein.
