@@ -293,7 +293,11 @@ class B⸻(Algorithm):  # Passe den Klassen-Namen hier an
 
 ### Hamiltonweg
 
-Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise.
+Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. 
+
+![Hamiltonweg](presentation/Hamiltonweg.png)
+
+Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise. In unserer Spielumgebung funktioniert ein Hamiltonweg nur bedingt, da die Schlange nach 117 Schritten verhungert. Ihr bleibt also gar nicht genug Zeit, alle Kästchen nach Futter abzusuchen.
 
 Um den definierten Anfangspunkt O(0|0) zu erreichen kann man folgenden Code verwenden:
 
