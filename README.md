@@ -144,6 +144,19 @@ Wir haben den Nutzen von [Versionskontrolle allgemein](presentation/Versionskont
 # BOGY Woche
 
 ## Montag, 22.3.2021
+### Repository klonen
+
+Wir haben die Datenbank von Github auf den Raspberry geklont mit
+
+`git clone https://github.com/BogyMitutoyoCTL/Snake-AI-2021.1.git snake`
+
+Beim Ausprobieren ist uns aufgefallen, dass für NumPy und Python noch zwei Bibliotheken fehlen. Diese beiden Bibliotheken konnten wir mit folgenden Befehlen nachinstallieren:
+
+```bash
+sudo apt-get install libatlas-base-dev
+sudo apt install libsdl2-ttf-2.0-0
+```
+
 ### Erläuterung des bestehenden Codes
 
 Da wir uns auf das Machine Learning konzentrieren wollen, hat Mitutoyo das Snake-Spiel bereits implementiert. Über diese Implementierung haben wir uns einen Überblick verschafft.
@@ -207,7 +220,12 @@ Damit man sich nicht blind für eine Aktion entscheiden muss, bekommt man für d
 
 Ebenfalls nützlich sind einige Funktionen:
 
-* `can_move_to(x,y)`: findet heraus, ob an diese Position gelaufen werden kann, ohne zu sterben
+* `can_move_to(x,y)`: findet heraus, ob an diese Position gelaufen werden kann, ohne zu sterben. Für X und Y setzt man dabei am besten eine Koordinate ein, die sich in der Nähe des Kopfes befindet, also, z.B.
+
+    ```python
+if info.can_move_to(info.head_x - 1, info.head_y):  # Ist links vom Kopf Platz?
+      return "west"                                     # Dann kann man nach Westen fahren
+    ```
 
 * `body_age(x,y)`: findet heraus, wie bald sich der Körper an dieser Stelle hier wegbewegt
 
