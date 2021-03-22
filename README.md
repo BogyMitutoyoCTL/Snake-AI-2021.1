@@ -244,10 +244,11 @@ Wir haben gemeinsam ausprobiert, was die Ergebnisse des `RandomChoice` Algorithm
 
 Ergebnisse nach 100 Epochen (100 Spielen):
 
-* T⸻: bestes Ergebnis: 5, max. gelaufene Schritte: 107, Gesamtmenge gegessen: 12, Gesamtanzahl Schritte: 3003
-* D⸻: bestes Ergebnis: 4, max. gelaufene Schritte: 118, Gesamtmenge gegessen: 18, Gesamtanzahl Schritte: 3269
-* B⸻: bestes Ergebnis: 4, max. gelaufene Schritte: 118, Gesamtmenge gegessen: 9, Gesamtanzahl Schritte: 3247
-* N⸻: bestes Ergebnis: 4, max. gelaufene Schritte: 105, Gesamtmenge gegessen:7, Gesamtanzahl Schritte: 3138
+* D⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
+* I⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
+* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
+* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
+* T⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
 
 ### Aufgabe: schreibe einen Algorithmus
 
