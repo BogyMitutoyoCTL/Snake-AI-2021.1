@@ -127,6 +127,11 @@ class GameData:
         """
         return self.body.index((x, y))
 
+    def can_do_action(self, direction: str) -> bool:
+        direction = self.relative_to_absolute(direction)
+        dx, dy = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}[direction]
+        return self.can_move_to(self.head_x + dx, self.head_y + dy)
+
     def can_move_to(self, x: int, y: int) -> bool:
         inside = self.field.pixel_is_inside_field(x, y)
         return inside and not self.is_body(x, y) and not self.is_head(x, y)
