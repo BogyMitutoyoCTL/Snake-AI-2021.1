@@ -258,18 +258,6 @@ Auch das Programm `main.py` ist schon auf Machine Learning vorbereitet. Deshalb 
 
 Die Klassen `Snake`, `Field`,`SnakeGym`, `Algorithm`, `RotateForever`, `RandomChoice` und `GameData` müssen im Laufe des Praktikums nicht geändert werden.
 
-### Ausprobieren
-
-Wir haben gemeinsam ausprobiert, was die Ergebnisse des `RandomChoice` Algorithmus sind. Unsere späteren Ergebnisse sollten auf jeden Fall besser sein als Zufall.
-
-Ergebnisse nach 100 Epochen (100 Spielen):
-
-* D⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-* I⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
-* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
-* T⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-
 ### Aufgabe: schreibe einen Algorithmus
 
 Die Aufgabe für diesen Vormittag ist, einen eigenen Algorithmus zu schreiben, der hoffentlich schon besser funktioniert als der Algorithmus, der per Zufall entscheidet. Dazu verwenden wir noch keine KI. Wir möchten zunächst herausfinden, wie schwierig es eigentlich ist, gut Snake zu spielen.
@@ -340,3 +328,7 @@ Damit der Zugriff auf Github einfacher wird und wir uns nicht ständig einloggen
 9. Gehe zu *Version Control* / *GitHub*
 10. Klicke auf `+` und wähle "Login with Token..."
 11. Füge die Zahlenfolge in das Feld ein.
+
+## Dienstag, 23.3.2021, Vormittag
+
+Am Vormittag haben wir uns ganz allgemein mit [Künstlicher Intelligenz](presentation/Künstliche%20Intelligenz.pptx) befasst.
