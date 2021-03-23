@@ -337,13 +337,13 @@ Am Vormittag haben wir uns ganz allgemein mit [Künstlicher Intelligenz](present
 
 Wir haben gemeinsam verglichen, was die Ergebnisse unserer eigenen Algorithmen sind.
 
-* I⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x, Anzahl der `if`-Anweisungen: x
+* I⸻: bestes Ergebnis 29 in 100 Spielen, max. Schritte 558, Gesamtmenge Futter: 1212, Gesamt-Schritte: 20433, Anzahl der `if`-Anweisungen: 9
   
-* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x, Anzahl der `if`-Anweisungen: x
+* J⸻: bestes Ergebnis 27 in 100 Spielen, max. Schritte 298, Gesamtmenge Futter: 802, Gesamt-Schritte: 8442, Anzahl der `if`-Anweisungen: 4
 
-* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x, Anzahl der `if`-Anweisungen: x
+* J⸻: bestes Ergebnis 32 in 100 Spielen, max. Schritte 324, Gesamtmenge Futter: 1156, Gesamt-Schritte: 12116, Anzahl der `if`-Anweisungen: 8
 
-* T⸻: bestes Ergebnis 51 in 100 Spielen, max. Schritte 623, Gesamtmenge Futter: 2394, Gesamt-Schritte: 27500, Anzahl der `if`-Anweisungen: 20
+* T⸻: bestes Ergebnis 51 in 100 Spielen, max. Schritte 709, Gesamtmenge Futter: 2419, Gesamt-Schritte: 28963, Anzahl der `if`-Anweisungen: 20
 
 Grob kann man erkennen, dass das Ergebnis besser wird, je mehr Bedingungen oder Situationen im Algorithmus berücksichtigt werden. Das drückt sich häufig durch die Anzahl der `if`/`elif` Abfragen aus.
 
@@ -364,3 +364,25 @@ Die Aufgabe ist bereits in der Präsentation beschrieben: schreibe eine Funktion
 * einen Ausschnitt aus dem Spielfeld um den Kopf herum in Betracht zieht
 * die Situation aus leeren und belegten Feldern in eine Zahl umrechnet
 * und dabei bestimmte Felder ausmaskieren (auslassen) kann
+
+Ausgangspunkt für die Implementierung ist folgende Klasse:
+
+```python
+from Algorithms.Algorithms import Algorithm
+from GameData import GameData
+
+
+class QTable⸻(Algorithm):  # Passe den Klassen-Namen hier an
+    def __init__(self):
+        super().__init__()
+
+    def decide(self, info: GameData) -> str:
+        situationsnummer = self.umrechnen(info, 3, "111 101 111")
+        return "north"
+
+    def umrechnen(self, info, kantenlaenge, maske):
+        # hier rechnen
+        return situationsnummer
+```
+
+
