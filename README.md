@@ -520,7 +520,7 @@ daten = json.load(datei)
 
 Die abgespeicherten  JSON Dateien sind quasi das Langzeitgedächtnis unserer Schlange. Das Langzeitgedächtnis des PCs ist die Festplatte. Dort überleben Daten auch einen Neustart des PCs.
 
-Damit die Schlange diese Daten auch abrufen und verarbeiten kann, müssen sie in das Kurzzeitgedächtnis überführt werden. Das Kurzzeitgedächnis des PCs ist das RAM (Random Access Memory). Variablen von Python befinden sich im RAM.
+Damit die Schlange diese Daten auch abrufen und verarbeiten kann, müssen sie in das Kurzzeitgedächtnis überführt werden. Das Kurzzeitgedächtnis des PCs ist das RAM (Random Access Memory). Variablen von Python befinden sich im RAM.
 
 Erweitere den bestehenden Algorithmus, so dass er die aufgezeichneten Entscheidungen aus  den JSON Dateien einliest und in (einer) Variablen speichert. Dann kann die Schlange später gemäß diesen Entscheidungen spielen.
 
