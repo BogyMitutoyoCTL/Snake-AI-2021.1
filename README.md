@@ -492,7 +492,7 @@ import json
 Die Bibliothek `glob` erlaubt uns, Dateien zu finden, zum Beispiel
 
 ```python
-dateinamen = glob.glob("3x3*.json")
+dateinamen = glob.glob("./decisionrecorder/*.json")
 ```
 
 Um eine Datei zu lesen wird keine Bibliothek benötigt. Eine Datei kann "von Hand" geöffnet und geschlossen werden mit
