@@ -3,5 +3,5 @@
   "food_directions": 5,
   "field_size": 3,
   "number_parallel_workers": 2,
-  "number_worker": 1
+  "number_worker": <zahl>
 }

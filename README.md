@@ -429,3 +429,26 @@ weil das Spielfeld so aussehen könnte:
  ![Mögliches Spielfeld, größerer Ausschnitt](presentation/possible_field.png)
 
 Damit wir eine gegenseitige Kontrolle haben, sollten wir jeden Fall zweimal aufzeichnen (1280 → 2560). Zusammen mit einem Mitarbeiter von Mitutoyo haben wir 4 Personen. Somit ergeben sich für jeden Schüler 640 Entscheidungen.
+
+Die Einstellung erfolgt über die Datei `configuration.json` im Order `decisionrecorder`. Im oben beschriebenen Fall muss sie so aussehen:
+
+```json
+{
+  "mask": "000 010 000",
+  "food_directions": 5,
+  "field_size": 3,
+  "number_parallel_workers": 2,
+  "number_worker": <zahl>
+}
+```
+
+Anstelle von `<zahl>` tragen wir folgende Nummer ein:
+
+* I⸻: 0 
+  d.h. I⸻ bearbeitet die ersten 640 Fälle
+* Ja⸻: 1
+  d.h. Ja⸻ bearbeitet die zweiten 640 Fälle
+* Ju⸻: 0
+  d.h. Ju⸻ bearbeitet die ersten 640 Fälle, zum Gegencheck von I⸻
+* T⸻: 1
+  d.h. T⸻ bearbeitet die zweiten 640 Fälle, zum gegencheck von Ja⸻
