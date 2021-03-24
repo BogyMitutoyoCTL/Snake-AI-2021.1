@@ -1,17 +1,42 @@
 from Algorithms.Algorithms import Algorithm
 from GameData import GameData
 
+import glob
+import json
+
 
 class QTableTW(Algorithm):
     def __init__(self):
         super().__init__()
+        # Schritt 0: Gedächtnis auffrischen
+        dateinamen = glob.glob("./decisionrecorder/[A-D].json")
+        self.gehirn = self.erzeuge_leeres_gehirn(256, 5)
+        for dateiname in dateinamen:
+            self.lese_eine_datei(dateiname)
+
+    def lese_eine_datei(self, dateiname: str):
+        with open(dateiname, "r") as datei:
+            liste_von_entscheidungen = json.load(datei)
+            for entscheidung in liste_von_entscheidungen:
+                situationsnummer = entscheidung["field"]
+                grobe_richtung = entscheidung["food"]
+                aktion = entscheidung["decision"]
+                gemerkt = self.gehirn[situationsnummer][grobe_richtung]
+                if gemerkt is None:
+                    self.gehirn[situationsnummer][grobe_richtung] = aktion
+                else:
+                    if (gemerkt == "-" or aktion == "-") and gemerkt != aktion:
+                        raise Exception("Diskrepanz in Situation", situationsnummer, "und in Richtung", grobe_richtung,": ", gemerkt, " versus", aktion)
+
 
     def decide(self, info: GameData) -> str:
         # Schritt 1: Situationsnummer ausrechnen
         situationsnummer = self.umrechnen(info, 3, "111 101 111")
         # Schritt 2: Nummer für die Richtung ausrechnen
+        # TODO: grobe Richtung bestimmen
         # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
         #            und suchen uns die Aktion raus, die ausgeführt werden soll
+        # TODO: Entscheidung raussuchen
         return "north"
 
     def umrechnen(self, spielfeld: GameData, kantenlaenge: int, maske: str) -> int:
@@ -57,3 +82,18 @@ class QTableTW(Algorithm):
             raise Exception("Die Maske passt nicht zur Kantenlänge")
         if len(maske.replace("1", "").replace("0", "")) > 0:
             raise Exception("Da sind Zeichen in der Maske die ich nicht kenne.")
+
+    def grobe_richtung(self, winkel: int) -> int:
+        pass
+
+    def daten_einlesen(self) -> list:
+        pass
+
+    def erzeuge_leeres_gehirn(self, aktionsanzahl, richtungsanzahl):
+        gehirn = []
+        for a in range(aktionsanzahl):
+            liste = []
+            for r in range(richtungsanzahl):
+                liste.append(None)
+            gehirn.append(liste)
+        return gehirn
