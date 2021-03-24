@@ -5,6 +5,7 @@ from decisionrecorder.Constants import *
 
 class Configuration:
     mask = None
+    mask_string = ""
     food_directions = None
     field_size = None
     number_parallel_workers = None
@@ -18,7 +19,7 @@ class Configuration:
         with open(self.path) as json_file:
             data = json.load(json_file)
 
-            mask_string = data['mask']
+            self.mask_string = data['mask']
             self.food_directions = data['food_directions']
             self.field_size = data['field_size']
             self.number_parallel_workers = data['number_parallel_workers']
@@ -26,7 +27,7 @@ class Configuration:
 
             mask = []
 
-            for m in mask_string:
+            for m in self.mask_string:
                 if m == '1':
                     mask.append(UNKNOWN)
                 elif m == ' ':

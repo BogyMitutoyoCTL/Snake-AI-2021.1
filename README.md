@@ -258,18 +258,6 @@ Auch das Programm `main.py` ist schon auf Machine Learning vorbereitet. Deshalb 
 
 Die Klassen `Snake`, `Field`,`SnakeGym`, `Algorithm`, `RotateForever`, `RandomChoice` und `GameData` müssen im Laufe des Praktikums nicht geändert werden.
 
-### Ausprobieren
-
-Wir haben gemeinsam ausprobiert, was die Ergebnisse des `RandomChoice` Algorithmus sind. Unsere späteren Ergebnisse sollten auf jeden Fall besser sein als Zufall.
-
-Ergebnisse nach 100 Epochen (100 Spielen):
-
-* D⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-* I⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
-* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-* J⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen:x, Gesamtanzahl Schritte: x
-* T⸻: bestes Ergebnis: x, max. gelaufene Schritte: x, Gesamtmenge gegessen: x, Gesamtanzahl Schritte: x
-
 ### Aufgabe: schreibe einen Algorithmus
 
 Die Aufgabe für diesen Vormittag ist, einen eigenen Algorithmus zu schreiben, der hoffentlich schon besser funktioniert als der Algorithmus, der per Zufall entscheidet. Dazu verwenden wir noch keine KI. Wir möchten zunächst herausfinden, wie schwierig es eigentlich ist, gut Snake zu spielen.
@@ -293,7 +281,11 @@ class B⸻(Algorithm):  # Passe den Klassen-Namen hier an
 
 ### Hamiltonweg
 
-Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise.
+Wir haben uns eine einfache aber perfekte Lösung für das Snake-Spiel ausgedacht: im Zickzack das Feld nach Futter absuchen, so dass man am Ende wieder am Anfang ankommt. 
+
+![Hamiltonweg](presentation/Hamiltonweg.png)
+
+Diese Art der Lösung ist ein Hamiltonweg. Dazu gibt es bei [Wikipedia](https://de.wikipedia.org/wiki/Hamiltonkreisproblem) noch ein paar Hinweise. In unserer Spielumgebung funktioniert ein Hamiltonweg nur bedingt, da die Schlange nach 117 Schritten verhungert. Ihr bleibt also gar nicht genug Zeit, alle Kästchen nach Futter abzusuchen.
 
 Um den definierten Anfangspunkt O(0|0) zu erreichen kann man folgenden Code verwenden:
 
@@ -317,3 +309,285 @@ class ZickZack(Algorithm):
 ### Aufgabe: vervollständige den Weg
 
 Vervollständige den obigen Code an der Stelle `...`, so dass die Schlange im Zickzack nach unten fährt und auf der rechten Seite ein Kästchen übrig lässt, um wieder nach oben zu kommen.
+
+### Github Token für den Zugriff einrichten
+
+Damit der Zugriff auf Github einfacher wird und wir uns nicht ständig einloggen müssen, richten wir uns ein Github Token ein. Das geht folgendermaßen:
+
+1. Logge Dich auf Github ein und gehe zu den Einstellungen Deines Profils.
+
+   ![Github Settings](presentation/githubsettings.png)
+
+2. Gehe zu *Developer Settings* und dann *Personal Access Tokens*
+3. Klicke auf *Generate New Token*
+4. Gib dem Token einen Namen als Bedeutung, z.B. "Snake bei Mitutoyo".
+5. Setze ein Häkchen bei: **repo**, **read:org** und **gist**.
+6. Klicke auf *Generate Token*
+7. Klicke auf das Icon, um die Zahlenfolge in die Zwischenablage zu kopieren
+8. In PyCharm: gehe zu *File* / *Settings*
+9. Gehe zu *Version Control* / *GitHub*
+10. Klicke auf `+` und wähle "Login with Token..."
+11. Füge die Zahlenfolge in das Feld ein.
+
+## Dienstag, 23.3.2021, Vormittag
+
+Am Vormittag haben wir uns ganz allgemein mit [Künstlicher Intelligenz](presentation/Künstliche%20Intelligenz.pptx) befasst.
+
+## Dienstag, 23.3.2021, Nachmittag
+
+Wir haben gemeinsam verglichen, was die Ergebnisse unserer eigenen Algorithmen sind.
+
+* I⸻: bestes Ergebnis 29 in 100 Spielen, max. Schritte 558, Gesamtmenge Futter: 1212, Gesamt-Schritte: 20433, Anzahl der `if`-Anweisungen: 9
+  
+* J⸻: bestes Ergebnis 27 in 100 Spielen, max. Schritte 298, Gesamtmenge Futter: 802, Gesamt-Schritte: 8442, Anzahl der `if`-Anweisungen: 4
+
+* J⸻: bestes Ergebnis 32 in 100 Spielen, max. Schritte 324, Gesamtmenge Futter: 1156, Gesamt-Schritte: 12116, Anzahl der `if`-Anweisungen: 8
+
+* T⸻: bestes Ergebnis 51 in 100 Spielen, max. Schritte 709, Gesamtmenge Futter: 2419, Gesamt-Schritte: 28963, Anzahl der `if`-Anweisungen: 20
+
+Grob kann man erkennen, dass das Ergebnis besser wird, je mehr Bedingungen oder Situationen im Algorithmus berücksichtigt werden. Das drückt sich häufig durch die Anzahl der `if`/`elif` Abfragen aus.
+
+### Spaghetti-Code?
+
+Gleichzeitig merkt man beim Programmieren aber auch, dass es immer schwieriger wird, die richtige Stelle zu finden, an der man noch weiter verbessern kann. Bei Programmierern mit wenig Erfahrung kann das schnell zu so genanntem Spaghetti Code führen. Als Spaghetti Code wird Quellcode bezeichnet, der in sich verstrickt ist. 
+
+Bei Spaghetti Code ist oft nicht klar, was alles passiert, wenn man an einer Stelle etwas ändert. Und man muss sich fragen, ob man selbst das Programm noch verstehen würde, wenn man es in einem halben Jahr noch einmal liest.
+
+Damit das nicht passiert, haben sich ein paar Regeln und Konzepte gebildet. Einerseits gibt es so genannte Entwurfsmuster (engl. *patterns*), mit denen man bestimmte Probleme lösen kann, zum anderen gibt es eine Initiative namens *Clean Code*, die zumindest Hinweise gibt, was man tun bzw. nicht tun sollte. Und wenn man dann nicht weiter weiß, sollte man einen Entwickler fragen, der mehr Erfahrung hat und vielleicht einen gute Tipp auf Lager hat, wie der Spaghetti Code ordentlicher aussehen könnte.
+
+Die Präsentation [Von der Spaghetti-Schlange zu Q-Tables](presentation/Von%20der%20Spaghetti-Schlange%20zu%20Q-Tables.pptx) stellt die Problematik vor und schlägt eine Lösung vor.
+
+### Aufgabe: Umrechnung einer Situation in eine Nummer
+
+Die Aufgabe ist bereits in der Präsentation beschrieben: schreibe eine Funktion, die 
+
+* einen Ausschnitt aus dem Spielfeld um den Kopf herum in Betracht zieht
+* die Situation aus leeren und belegten Feldern in eine Zahl umrechnet
+* und dabei bestimmte Felder ausmaskieren (auslassen) kann
+
+Ausgangspunkt für die Implementierung ist folgende Klasse:
+
+```python
+from Algorithms.Algorithms import Algorithm
+from GameData import GameData
+
+
+class QTable⸻(Algorithm):  # Passe den Klassen-Namen hier an
+    def __init__(self):
+        super().__init__()
+
+    def decide(self, info: GameData) -> str:
+        situationsnummer = self.umrechnen(info, 3, "111 101 111")
+        return "north"
+
+    def umrechnen(self, info, kantenlaenge, maske):
+        # hier rechnen
+        return situationsnummer
+```
+
+## Mittwoch, 24.3.2021, Vormittag
+
+### Aufgabe: Entscheidungen sammeln
+
+Wir haben ein Programm geschrieben, das Entscheidungen für bestimmte Situationen aufzeichnen und abspeichern kann. Dieses Programm ist kompatibel zu der Art und Weise, wie wir die Situation in eine Nummer umrechnen. Allerdings gilt es nun, 2⁸ Felder * 5 Richtungen, also für 1280 Fälle die Entscheidungen einzusammeln. Diese Arbeit teilen wir uns. 
+
+Bei einem 5x5 Ausschnitt und 5 Richtungen hätten wir schon 83 Millionen Entscheidungen zu treffen. Die wollen wir selbst mit einem Programm nicht durchgehen - das soll der Computer dann lieber selbst lernen.
+
+Die grafische Oberfläche zum Einsammeln von Entscheidungen sieht folgendermaßen aus:
+
+ ![Entscheidungs-Recorder](presentation/decisionrecorder.png)
+
+Zu sehen ist ein 3x3 Ausschnitt aus dem Spielfeld. Der dunkelrote Winkel zeigt an, in welcher Richtung sich das Futter befindet. In diesem Fall liegt das Futter auf jeden Fall südlich, es könnte aber zusätzlich noch ein bisschen östlich liegen, vielleicht aber auch westlich. Dass der rote Ausschnitt eher nach Westen zeigt, ist dabei kein Anzeichen für eine höhere Wahrscheinlichkeit, dass das Futter im Westen liegt.
+
+Welche Aktion die Schlange in dieser Situation auslösen soll, bestimmst Du. Folgende Kriterien sind zu beachten:
+
+* Die Schlange soll keinesfalls sterben. Fahre also nicht in den Schwanz der Schlange.
+* Die Schlange sollte möglichst schnell zum Futter kommen.
+
+Da der rote Bereich sowohl westlich als auch östlich liegt, ist weder Osten noch Westen im gezeigten Fall eine gute Wahl. Wenn die Schlange allerdings nach Süden fährt, wird irgendwann die Ausprägung zwischen Ost oder West deutlicher:
+
+* Verschiebung nach Osten, falls das Futter tatsächlich östlich lag:
+
+    ![Ostverschiebung](presentation/ostverschiebung.png)
+
+* Verschiebung nach Westen, falls das Futter tatsächlich westlich lag:
+
+    ![Westverschiebung](presentation/westverschiebung.png)
+
+Da das Programm alle Möglichkeiten durchgeht, können Situationen angezeigt werden, die im Spiel nie vorkommen können, beispielsweise:
+
+ ![Unmögliche Situation](presentation/impossible.png)
+
+Es muss mindestens ein grünes Kästchen an das blaue Kästchen anschließen, da die Schlange nicht diagonal laufen kann. Für diesen Fall ist der Button "Impossible" gedacht.
+
+Beachte aber, dass nicht alle diagonal aussehenden Felder unmöglich sind. Folgendes Feld beispielsweise ist legal:
+
+ ![Mögliches Spielfeld, kleiner Ausschnitt](presentation/possible.png)
+
+weil das Spielfeld so aussehen könnte:
+
+ ![Mögliches Spielfeld, größerer Ausschnitt](presentation/possible_field.png)
+
+Damit wir eine gegenseitige Kontrolle haben, sollten wir jeden Fall zweimal aufzeichnen (1280 → 2560). Zusammen mit einem Mitarbeiter von Mitutoyo haben wir 4 Personen. Somit ergeben sich für jeden Schüler 640 Entscheidungen.
+
+Die Einstellung erfolgt über die Datei `configuration.json` im Order `decisionrecorder`. Im oben beschriebenen Fall muss sie so aussehen:
+
+```json
+{
+  "mask": "000 010 000",
+  "food_directions": 5,
+  "field_size": 3,
+  "number_parallel_workers": 2,
+  "number_worker": <zahl>
+}
+```
+
+Anstelle von `<zahl>` tragen wir folgende Nummer ein:
+
+* I⸻: 0 
+  d.h. I⸻ bearbeitet die ersten 640 Fälle
+* Ja⸻: 1
+  d.h. Ja⸻ bearbeitet die zweiten 640 Fälle
+* Ju⸻: 0
+  d.h. Ju⸻ bearbeitet die ersten 640 Fälle, zum Gegencheck von I⸻
+* D⸻: 1
+  d.h. D⸻ bearbeitet die zweiten 640 Fälle, zum Gegencheck von Ja⸻
+
+Um das Tool laufen zu lassen öffnen wir `main.py` aus dem Ordner `decisionrecorder`.
+
+### JSON
+
+Das Programm hat die Datei in einer Art Textdatei mit der Endung JSON abgespeichert. Dieses Dateiformat haben wir gewählt, 
+
+1. weil man es (im Gegensatz zu Excel o.ä.) auch in PyCharm noch anschauen und ggf. auch nachträglich bearbeiten kann.
+2. weil sich Textdateien bei Änderungen gut vergleichen lassen, z.B. mit einem Programm wie KDiff3 und man mit Hilfe von Git gut nachvollziehen warum es Änderungen gab.
+
+Ein Ausschnitt aus der Datei könnte folgendermaßen aussehen.
+
+```json
+    {
+        "field": 128,
+        "food": 0,
+        "decision": "-"
+    },
+```
+
+`{ ... }` kennzeichnet ein Objekt.
+
+`field` ist eine Eigenschaft des Objekts und kennzeichnet den hier Ausschnitt aus dem Spielfeld und entspricht der von uns berechneten Situationsnummer.
+
+`food` bestimmt die Richtung zum Futter. Bei 5 Richtungen geht diese Zahl von 0 bis 4.
+
+`decision` ist die aufgezeichnete Antwort. `N`, `E`, `S` und `W` sind die Himmelsrichtungen. `-` bedeutet "Impossible" und `null`sagt aus, dass keine Antwort abgegeben wurde.
+
+### Dateien lesen und verarbeiten
+
+Um Dateien zu lesen und speziell JSON zu verarbeiten brauchen wir folgende Bibliotheken:
+
+```python
+import glob
+import json
+```
+
+Die Bibliothek `glob` erlaubt uns, Dateien zu finden, zum Beispiel
+
+```python
+dateinamen = glob.glob("3x3*.json")
+```
+
+Um eine Datei zu lesen wird keine Bibliothek benötigt. Eine Datei kann "von Hand" geöffnet und geschlossen werden mit
+
+```python
+datei = open(dateiname, "r")
+# Daten lesen
+datei.close()
+```
+
+oder geöffnet und automatisch geschlossen werden:
+
+```python
+with open(dateiname, "r") as datei:
+    # Daten lesen (eingerückt)
+```
+
+Die Bibliothek `json` ermöglicht uns, Daten im JSON-Format zu lesen., zum Beispiel
+
+```python
+daten = json.load(datei)
+```
+
+### Aufgabe: Die  gespeicherten Entscheidungen einlesen
+
+Die abgespeicherten  JSON Dateien sind quasi das Langzeitgedächtnis unserer Schlange. Das Langzeitgedächtnis des PCs ist die Festplatte. Dort überleben Daten auch einen Neustart des PCs.
+
+Damit die Schlange diese Daten auch abrufen und verarbeiten kann, müssen sie in das Kurzzeitgedächtnis überführt werden. Das Kurzzeitgedächnis des PCs ist das RAM (Random Access Memory). Variablen von Python befinden sich im RAM.
+
+Erweitere den bestehenden Algorithmus, so dass er die aufgezeichneten Entscheidungen aus  den JSON Dateien einliest und in (einer) Variablen speichert. Dann kann die Schlange später gemäß diesen Entscheidungen spielen.
+
+Das Lesen der Daten macht die Schlange am besten nur einmal, sofern die Datenmenge dies zulässt. Der geschickteste Ort dafür ist die `__init__()` Methode der Schlange.
+
+```python
+    def __init__(self):
+        super().__init__()
+        # Schritt 0: Gedächtnis auffrischen
+        # TODO: hier Daten einlesen
+```
+
+## Mittwoch, 24.3.2021, Nachmittag
+
+### Aufgabe: Winkel in Bereiche einteilen
+
+Der DecisionRecorder hat die Richtung des Futters ziemlich grob in 5 Richtungen eingeteilt. `GameData`  liefert uns allerdings einen gradgenauen Winkel zwischen -180° und 180°. 
+
+Schreibe eine Funktion, die den gradgenauen Winkel in *n* Bereiche einteilen kann und eine Zahl zwischen 0 und n-1 liefert.
+
+```python
+    def decide(self, info: GameData) -> str:
+        # Schritt 1: Situationsnummer ausrechnen
+        situationsnummer = self.umrechnen(info, 3, "111 101 111")
+        # Schritt 2: Nummer für die Richtung ausrechnen
+        # TODO: hier grobe Bereichsnummer ermitteln
+```
+
+### Aufgabe: vervollständige den Algorithmus
+
+Unser Algorithmus hat jetzt ein "Gehirn" mit den nötigen Entscheidungen, er kann die Situation in eine Zahl umrechnen und die Richtung des Futters grob in Bereiche aufteilen.
+
+Jetzt muss er "nur noch" diese Informationen alle zusammenbringen und die richtige Aktion auswählen.
+
+```python
+def decide(self, info: GameData) -> str:
+    # Schritt 1: Situationsnummer ausrechnen
+    situationsnummer = self.umrechnen(info, 3, "111 101 111")
+    # Schritt 2: Nummer für die Richtung ausrechnen
+    richtung = self.grobe_richtung(info.food_direction)
+    # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
+    #            und suchen uns die Aktion raus, die ausgeführt werden soll
+    # TODO: Entscheidung raussuchen
+```
+
+### Fun!
+
+Endlich ist der Algorithmus fertig. Die Methode `decide()` kann auf 1280 Entscheidungen zugreifen, hat also quasi 1280 `if`-Anweisungen eingebaut.
+
+Wie gut macht sich die Schlange? Wir stellen vergleichen Ergebnisse her, indem wir die Schlange 100 Epochen lang beobachten.
+
+Ergebnisse:
+
+* I⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* T⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+Übersicht:
+
+| Name                  | I⸻ vorher | J⸻ vorher | J⸻ vorher | T⸻ vorher | aufgezeichnete Entscheidungen |
+| --------------------- | --------- | --------- | --------- | --------- | ----------------------------- |
+| Beste Länge           | 29        | 27        | 32        | 51        |                               |
+| Max. Schritte         | 558       | 298       | 324       | 709       |                               |
+| Futter gesamt         | 1212      | 802       | 1156      | 2419      |                               |
+| Schritte gesamt       | 20433     | 8442      | 12116     | 28963     |                               |
+| Anzahl if-Anweisungen | 9         | 4         | 8         | 20        | 1280 (?)                      |
