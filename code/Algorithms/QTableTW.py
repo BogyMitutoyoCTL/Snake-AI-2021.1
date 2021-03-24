@@ -9,12 +9,20 @@ class QTableTW(Algorithm):
     def __init__(self):
         super().__init__()
         # Schritt 0: Gedächtnis auffrischen
-        dateinamen = glob.glob("./decisionrecorder/[A-D].json")
-        self.gehirn = self.erzeuge_leeres_gehirn(256, 5)
-        for dateiname in dateinamen:
-            self.lese_eine_datei(dateiname)
+        self.kantenlaenge = 3
+        self.maske = "111 101 111"
+        self.maske = self.maske.replace(" ", "")  # Leerzeichen sind nur für Menschen interessant
+        self.anzahl_richtungen = 5
+        speicherplatzanzahl = 2 ** (self.maske.count("1"))
+        self.gehirn = self.erzeuge_leeres_gehirn(speicherplatzanzahl, self.anzahl_richtungen)
+        self.lies_alle_dateien()
 
-    def lese_eine_datei(self, dateiname: str):
+    def lies_alle_dateien(self):
+        dateinamen = glob.glob("./decisionrecorder/[A-D].json")
+        for dateiname in dateinamen:
+            self.lies_eine_datei(dateiname)
+
+    def lies_eine_datei(self, dateiname: str):
         with open(dateiname, "r") as datei:
             liste_von_entscheidungen = json.load(datei)
             for entscheidung in liste_von_entscheidungen:
@@ -29,21 +37,22 @@ class QTableTW(Algorithm):
                         raise Exception("Diskrepanz in Situation", situationsnummer, "und in Richtung", grobe_richtung,": ", gemerkt, " versus", aktion)
 
 
-    def decide(self, info: GameData) -> str:
+    def decide(self, spielfeld: GameData) -> str:
         # Schritt 1: Situationsnummer ausrechnen
-        situationsnummer = self.umrechnen(info, 3, "111 101 111")
+        situationsnummer = self.umrechnen(spielfeld)
         # Schritt 2: Nummer für die Richtung ausrechnen
         # TODO: grobe Richtung bestimmen
+        grobe_richtung = self.grobe_richtung(spielfeld.food_direction)
         # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
         #            und suchen uns die Aktion raus, die ausgeführt werden soll
         # TODO: Entscheidung raussuchen
-        return "north"
+        aktion = self.entscheide(situationsnummer, grobe_richtung)
+        return aktion
 
-    def umrechnen(self, spielfeld: GameData, kantenlaenge: int, maske: str) -> int:
-        maske = maske.replace(" ", "")  # Leerzeichen sind nur für Menschen interessant
-        self.pruefe(kantenlaenge, maske)
-        ausschnitt = self.gib_mir_einen_ausschnitt(spielfeld, kantenlaenge)
-        situationsnummer = self.berechne_im_binaersystem(ausschnitt, maske)
+    def umrechnen(self, spielfeld: GameData) -> int:
+        self.pruefe(self.kantenlaenge, self.maske)
+        ausschnitt = self.gib_mir_einen_ausschnitt(spielfeld, self.kantenlaenge)
+        situationsnummer = self.berechne_im_binaersystem(ausschnitt, self.maske)
         return situationsnummer
 
     def berechne_im_binaersystem(self, ausschnitt, maske):
@@ -84,9 +93,6 @@ class QTableTW(Algorithm):
             raise Exception("Da sind Zeichen in der Maske die ich nicht kenne.")
 
     def grobe_richtung(self, winkel: int) -> int:
-        pass
-
-    def daten_einlesen(self) -> list:
         pass
 
     def erzeuge_leeres_gehirn(self, aktionsanzahl, richtungsanzahl):
