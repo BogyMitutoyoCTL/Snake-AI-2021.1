@@ -389,9 +389,11 @@ class QTable⸻(Algorithm):  # Passe den Klassen-Namen hier an
 
 ### Aufgabe: Entscheidungen sammeln
 
-Wir haben ein Programm geschrieben, das Entscheidungen für bestimmte Situationen aufzeichnen und abspeichern kann. Dieses Programm ist kompatibel zu der Art und Weise, wie wir die Situation in eine Nummer umrechnen. Allerdings gilt es nun, 2^8 Felder * 5 Richtungen, also für 1280 Fälle die Entscheidungen einzusammeln. Diese Arbeit teilen wir uns. 
+Wir haben ein Programm geschrieben, das Entscheidungen für bestimmte Situationen aufzeichnen und abspeichern kann. Dieses Programm ist kompatibel zu der Art und Weise, wie wir die Situation in eine Nummer umrechnen. Allerdings gilt es nun, 2⁸ Felder * 5 Richtungen, also für 1280 Fälle die Entscheidungen einzusammeln. Diese Arbeit teilen wir uns. 
 
-Die grafische Oberfläche dafür sieht folgendermaßen aus:
+Bei einem 5x5 Ausschnitt und 5 Richtungen hätten wir schon 83 Millionen Entscheidungen zu treffen. Die wollen wir selbst mit einem Programm nicht durchgehen - das soll der Computer dann lieber selbst lernen.
+
+Die grafische Oberfläche zum Einsammeln von Entscheidungen sieht folgendermaßen aus:
 
  ![Entscheidungs-Recorder](presentation/decisionrecorder.png)
 
@@ -420,10 +422,10 @@ Es muss mindestens ein grünes Kästchen an das blaue Kästchen anschließen, da
 
 Beachte aber, dass nicht alle diagonal aussehenden Felder unmöglich sind. Folgendes Feld beispielsweise ist legal:
 
- ![Mögliches Spielfeld](presentation/possible.png)
+ ![Mögliches Spielfeld, kleiner Ausschnitt](presentation/possible.png)
 
 weil das Spielfeld so aussehen könnte:
 
- ![Mögliches Spielfeld](presentation/possible_field.png)
+ ![Mögliches Spielfeld, größerer Ausschnitt](presentation/possible_field.png)
 
-Damit wir eine gegenseitige Kontrolle haben, sollten sich die Fälle überlappen (1280 --> 2560). Zusammen mit einem Mitarbeiter von Mitutoyo haben wir 4 Personen. Somit ergeben sich für jeden Schüler 640 Entscheidungen.
+Damit wir eine gegenseitige Kontrolle haben, sollten wir jeden Fall zweimal aufzeichnen (1280 → 2560). Zusammen mit einem Mitarbeiter von Mitutoyo haben wir 4 Personen. Somit ergeben sich für jeden Schüler 640 Entscheidungen.
