@@ -41,7 +41,6 @@ class QTableTW(Algorithm):
         # Schritt 1: Situationsnummer ausrechnen
         situationsnummer = self.umrechnen(spielfeld)
         # Schritt 2: Nummer für die Richtung ausrechnen
-        # TODO: grobe Richtung bestimmen
         grobe_richtung = self.grobe_richtung(spielfeld.food_direction)
         # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
         #            und suchen uns die Aktion raus, die ausgeführt werden soll
@@ -92,8 +91,15 @@ class QTableTW(Algorithm):
         if len(maske.replace("1", "").replace("0", "")) > 0:
             raise Exception("Da sind Zeichen in der Maske die ich nicht kenne.")
 
-    def grobe_richtung(self, winkel: int) -> int:
-        pass
+    def grobe_richtung(self, alpha: int) -> int:
+        # Die negativen Winkel stören
+        if alpha < 0:
+            alpha = alpha + 360
+
+        # Wie breit ist eine grobe Einheit?
+        beta = 360 / self.anzahl_richtungen
+        richtung = int(alpha / beta)
+        return richtung
 
     def erzeuge_leeres_gehirn(self, aktionsanzahl, richtungsanzahl):
         gehirn = []
@@ -103,3 +109,7 @@ class QTableTW(Algorithm):
                 liste.append(None)
             gehirn.append(liste)
         return gehirn
+
+    def entscheide(self, situationsnummer: int, grobe_richtung: int) -> str:
+        self.gehirn ...
+        pass
