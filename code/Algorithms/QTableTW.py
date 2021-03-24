@@ -19,6 +19,7 @@ class QTableTW(Algorithm):
 
     def lies_alle_dateien(self):
         dateinamen = glob.glob("./decisionrecorder/[A-D].json")
+        dateinamen.sort()
         for dateiname in dateinamen:
             self.lies_eine_datei(dateiname)
 
@@ -34,8 +35,8 @@ class QTableTW(Algorithm):
                     self.gehirn[situationsnummer][grobe_richtung] = aktion
                 else:
                     if (gemerkt == "-" or aktion == "-") and gemerkt != aktion:
-                        raise Exception("Diskrepanz in Situation", situationsnummer, "und in Richtung", grobe_richtung,": ", gemerkt, " versus", aktion)
-
+                        raise Exception("Diskrepanz in Situation", situationsnummer, "und in Richtung", grobe_richtung,
+                                        ": ", gemerkt, " versus", aktion)
 
     def decide(self, spielfeld: GameData) -> str:
         # Schritt 1: Situationsnummer ausrechnen
@@ -111,5 +112,10 @@ class QTableTW(Algorithm):
         return gehirn
 
     def entscheide(self, situationsnummer: int, grobe_richtung: int) -> str:
-        self.gehirn ...
-        pass
+        entscheidungen_in_situation = self.gehirn[situationsnummer]
+        entscheidung_fuer_richtung = entscheidungen_in_situation[grobe_richtung]
+
+        # Problem: wir bekommen N, E, S, W
+        woerterbuch = {"N": "north", "W": "west", "S": "south", "E": "east"}
+        uebersetzt = woerterbuch[entscheidung_fuer_richtung]
+        return uebersetzt
