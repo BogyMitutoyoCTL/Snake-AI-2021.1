@@ -574,20 +574,25 @@ Wie gut macht sich die Schlange? Wir stellen vergleichen Ergebnisse her, indem w
 
 Ergebnisse:
 
-* I⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
-
-* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
-
-* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
-
-* T⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+* I⸻: bestes Ergebnis 48 in 100 Spielen, max. Schritte 674, Gesamtmenge Futter: 2406, Gesamt-Schritte: 29447
+* J⸻: bestes Ergebnis 49 in 100 Spielen, max. Schritte 708, Gesamtmenge Futter: 2484, Gesamt-Schritte: 31200
+* J⸻: bestes Ergebnis 54 in 100 Spielen, max. Schritte 612, Gesamtmenge Futter: 2417, Gesamt-Schritte: 29835
+* D⸻: bestes Ergebnis 55 in 100 Spielen, max. Schritte 701, Gesamtmenge Futter: 2512, Gesamt-Schritte: 30649
+* T⸻: bestes Ergebnis 47 in 100 Spielen, max. Schritte 654, Gesamtmenge Futter: 2360, Gesamt-Schritte: 29085
 
 Übersicht:
 
 | Name                  | I⸻ vorher | J⸻ vorher | J⸻ vorher | T⸻ vorher | aufgezeichnete Entscheidungen |
 | --------------------- | --------- | --------- | --------- | --------- | ----------------------------- |
-| Beste Länge           | 29        | 27        | 32        | 51        |                               |
-| Max. Schritte         | 558       | 298       | 324       | 709       |                               |
-| Futter gesamt         | 1212      | 802       | 1156      | 2419      |                               |
-| Schritte gesamt       | 20433     | 8442      | 12116     | 28963     |                               |
-| Anzahl if-Anweisungen | 9         | 4         | 8         | 20        | 1280 (?)                      |
+| Beste Länge           | 29        | 27        | 32        | 51        | 47 ... 55                     |
+| Max. Schritte         | 558       | 298       | 324       | 709       | 612 ... 708                   |
+| Futter gesamt         | 1212      | 802       | 1156      | 2419      | 2360 ... 2515                 |
+| Schritte gesamt       | 20433     | 8442      | 12116     | 28963     | 29085 ... 31200               |
+| Anzahl if-Anweisungen | 9         | 4         | 8         | 20        | 1175*                         |
+*) 2⁸ \* 5 = 1280, abzgl. 105 unmögliche Situationen
+
+Warum erreicht unser Algorithmus keine besseren Ergebnisse?
+
+* Kurzsichtigkeit: die Schlange kann nur 1 Kästchen weit sehen
+* Die Anzahl der Richtungen ist gering: es ist manchmal unklar, was die beste Entscheidung ist
+* Bedingt dadurch: Fehler in unseren aufgezeichneten Daten
