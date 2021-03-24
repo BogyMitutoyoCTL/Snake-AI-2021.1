@@ -596,3 +596,52 @@ Warum erreicht unser Algorithmus keine besseren Ergebnisse?
 * Kurzsichtigkeit: die Schlange kann nur 1 Kästchen weit sehen
 * Die Anzahl der Richtungen ist gering: es ist manchmal unklar, was die beste Entscheidung ist
 * Bedingt dadurch: Fehler in unseren aufgezeichneten Daten
+
+## Donnerstag, 25.3.2021, Vormittag
+
+### Erweiterung des Blickfeldes
+
+Die Aufzeichnung unserer Entscheidungen für ein 3x3 Sichtfeld waren in Ordnung, brachten aber keine große Verbesserung in der Leistung der Schlange. Sie schneidet nur marginal besser ab als eine selbst programmierte Schlange mit 20 if-Anweisungen. Wir erhöhen daher die Sichtweite auf 5x5. Bei 83 Millionen Kombinationen aus Spielfeld und Futter soll der Computer dann selbst herausfinden, was gute und schlechte Entscheidungen sind.
+
+Wir haben dazu unsere 2D Struktur so überarbeitet, dass  eine 3D-Struktur entstanden ist, die Werte für die Zuversichtlichkeit  von Aktionen aufnimmt. Diese Werte haben wir mit einem Mittelwert von  0,5 initialisiert und in der Feedback-Phase entweder erhöht oder  erniedrigt, je nach dem, ob eine Aktion erfolgreich war oder sich  schlecht auf die Lebensdauer der Schlange auswirkte.
+
+Das Feedback erfolgt über eine Methode `train()` mit folgender Struktur:
+
+```python
+def train(self, info: GameData, action, reward) -> None:
+    pass
+```
+
+`info` beinhaltet die Angaben zum Spielfeld, wie es vor der Aktion aussah.
+
+`action` ist die durchgeführte Aktion.
+
+`reward` ist eine Zahl, deren Maßstab an anderer Stelle eingestellt werden kann. In der Standard-Einstellung bedeuten negative Werte schlechte Erlebnisse, positive Werte gute Erlebnisse. Es handelt sich um eine Summe von Erfahrungen wie z.B. Entfernung zum Futter (gering positiv), Fressen von Nahrung (hoch positiv) und Sterben (negativ, abhängig davon wie die Schlange stirbt).
+
+Es ist sinnvoll, die 3D-Struktur abzuspeichern und wieder zu laden, so dass die Schlange nicht immer von  Neuem anfangen muss zu lernen. Das Dateiformat JSON  ist dafür zu langsam heraus. Deshalb nutzen wir bei `pickle` und speichern erst nach einer gewissen Anzahl von Epochen, anstatt am Ende jedes Spiels. Die Dateigröße beträgt bei einem 5x5 Spielfeld und 5 Blickrichtungen ca. 230 MB.
+
+Speichern und Laden funktioniert grundsätzlich so:
+
+```python
+import pickle
+...
+# Speichern
+with open(dateiname, "wb") as datei:
+    pickle.dump(daten, datei)
+...
+# Laden
+with open(dateiname, "rb") as datei:
+    daten = pickle.load(datei)
+```
+
+Zum Speichern bietet unsere Umgebung noch eine Methode an, die am Ende jeder Trainingsrunde aufgerufen wird. Die Rückgabewerte sind das Modell und dessen Fitness. Da wir kein neuronales Netz haben und auch keine Fitnessfunktion erstellt haben, können wir hier leere Werte zurückgeben.
+
+```python
+def epochfinished(self) -> (object, float):
+    # Hier Speichern oder auch nicht
+    return None, 0.0
+```
+
+### Aufgabe: Passe eine Kopie des 3x3 Algorithmus auf Selbstlernen an
+
+Kopiere den Algorithmus für das 3x3-Feld. Passe den Namen und die Werte auf ein 5x5-Feld an. Entferne die Funktion zum Einlesen von Daten aus JSON-Dateien. Erweitere dann den Algorithmus so, dass er Wahrscheinlichkeiten berücksichtigt und seine gelernten Erfolge alle 50 Epochen abspeichert. 
