@@ -450,5 +450,144 @@ Anstelle von `<zahl>` tragen wir folgende Nummer ein:
   d.h. Ja⸻ bearbeitet die zweiten 640 Fälle
 * Ju⸻: 0
   d.h. Ju⸻ bearbeitet die ersten 640 Fälle, zum Gegencheck von I⸻
-* T⸻: 1
-  d.h. T⸻ bearbeitet die zweiten 640 Fälle, zum gegencheck von Ja⸻
+* D⸻: 1
+  d.h. D⸻ bearbeitet die zweiten 640 Fälle, zum Gegencheck von Ja⸻
+
+Um das Tool laufen zu lassen öffnen wir `main.py` aus dem Ordner `decisionrecorder`.
+
+### JSON
+
+Das Programm hat die Datei in einer Art Textdatei mit der Endung JSON abgespeichert. Dieses Dateiformat haben wir gewählt, 
+
+1. weil man es (im Gegensatz zu Excel o.ä.) auch in PyCharm noch anschauen und ggf. auch nachträglich bearbeiten kann.
+2. weil sich Textdateien bei Änderungen gut vergleichen lassen, z.B. mit einem Programm wie KDiff3 und man mit Hilfe von Git gut nachvollziehen warum es Änderungen gab.
+
+Ein Ausschnitt aus der Datei könnte folgendermaßen aussehen.
+
+```json
+    {
+        "field": 128,
+        "food": 0,
+        "decision": "-"
+    },
+```
+
+`{ ... }` kennzeichnet ein Objekt.
+
+`field` ist eine Eigenschaft des Objekts und kennzeichnet den hier Ausschnitt aus dem Spielfeld und entspricht der von uns berechneten Situationsnummer.
+
+`food` bestimmt die Richtung zum Futter. Bei 5 Richtungen geht diese Zahl von 0 bis 4.
+
+`decision` ist die aufgezeichnete Antwort. `N`, `E`, `S` und `W` sind die Himmelsrichtungen. `-` bedeutet "Impossible" und `null`sagt aus, dass keine Antwort abgegeben wurde.
+
+### Dateien lesen und verarbeiten
+
+Um Dateien zu lesen und speziell JSON zu verarbeiten brauchen wir folgende Bibliotheken:
+
+```python
+import glob
+import json
+```
+
+Die Bibliothek `glob` erlaubt uns, Dateien zu finden, zum Beispiel
+
+```python
+dateinamen = glob.glob("3x3*.json")
+```
+
+Um eine Datei zu lesen wird keine Bibliothek benötigt. Eine Datei kann "von Hand" geöffnet und geschlossen werden mit
+
+```python
+datei = open(dateiname, "r")
+# Daten lesen
+datei.close()
+```
+
+oder geöffnet und automatisch geschlossen werden:
+
+```python
+with open(dateiname, "r") as datei:
+    # Daten lesen (eingerückt)
+```
+
+Die Bibliothek `json` ermöglicht uns, Daten im JSON-Format zu lesen., zum Beispiel
+
+```python
+daten = json.load(datei)
+```
+
+### Aufgabe: Die  gespeicherten Entscheidungen einlesen
+
+Die abgespeicherten  JSON Dateien sind quasi das Langzeitgedächtnis unserer Schlange. Das Langzeitgedächtnis des PCs ist die Festplatte. Dort überleben Daten auch einen Neustart des PCs.
+
+Damit die Schlange diese Daten auch abrufen und verarbeiten kann, müssen sie in das Kurzzeitgedächtnis überführt werden. Das Kurzzeitgedächnis des PCs ist das RAM (Random Access Memory). Variablen von Python befinden sich im RAM.
+
+Erweitere den bestehenden Algorithmus, so dass er die aufgezeichneten Entscheidungen aus  den JSON Dateien einliest und in (einer) Variablen speichert. Dann kann die Schlange später gemäß diesen Entscheidungen spielen.
+
+Das Lesen der Daten macht die Schlange am besten nur einmal, sofern die Datenmenge dies zulässt. Der geschickteste Ort dafür ist die `__init__()` Methode der Schlange.
+
+```python
+    def __init__(self):
+        super().__init__()
+        # Schritt 0: Gedächtnis auffrischen
+        # TODO: hier Daten einlesen
+```
+
+## Mittwoch, 24.3.2021, Nachmittag
+
+### Aufgabe: Winkel in Bereiche einteilen
+
+Der DecisionRecorder hat die Richtung des Futters ziemlich grob in 5 Richtungen eingeteilt. `GameData`  liefert uns allerdings einen gradgenauen Winkel zwischen -180° und 180°. 
+
+Schreibe eine Funktion, die den gradgenauen Winkel in *n* Bereiche einteilen kann und eine Zahl zwischen 0 und n-1 liefert.
+
+```python
+    def decide(self, info: GameData) -> str:
+        # Schritt 1: Situationsnummer ausrechnen
+        situationsnummer = self.umrechnen(info, 3, "111 101 111")
+        # Schritt 2: Nummer für die Richtung ausrechnen
+        # TODO: hier grobe Bereichsnummer ermitteln
+```
+
+### Aufgabe: vervollständige den Algorithmus
+
+Unser Algorithmus hat jetzt ein "Gehirn" mit den nötigen Entscheidungen, er kann die Situation in eine Zahl umrechnen und die Richtung des Futters grob in Bereiche aufteilen.
+
+Jetzt muss er "nur noch" diese Informationen alle zusammenbringen und die richtige Aktion auswählen.
+
+```python
+def decide(self, info: GameData) -> str:
+    # Schritt 1: Situationsnummer ausrechnen
+    situationsnummer = self.umrechnen(info, 3, "111 101 111")
+    # Schritt 2: Nummer für die Richtung ausrechnen
+    richtung = self.grobe_richtung(info.food_direction)
+    # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
+    #            und suchen uns die Aktion raus, die ausgeführt werden soll
+    # TODO: Entscheidung raussuchen
+```
+
+### Fun!
+
+Endlich ist der Algorithmus fertig. Die Methode `decide()` kann auf 1280 Entscheidungen zugreifen, hat also quasi 1280 `if`-Anweisungen eingebaut.
+
+Wie gut macht sich die Schlange? Wir stellen vergleichen Ergebnisse her, indem wir die Schlange 100 Epochen lang beobachten.
+
+Ergebnisse:
+
+* I⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* J⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+* T⸻: bestes Ergebnis x in 100 Spielen, max. Schritte x, Gesamtmenge Futter: x, Gesamt-Schritte: x
+
+Übersicht:
+
+| Name                  | I⸻ vorher | J⸻ vorher | J⸻ vorher | T⸻ vorher | aufgezeichnete Entscheidungen |
+| --------------------- | --------- | --------- | --------- | --------- | ----------------------------- |
+| Beste Länge           | 29        | 27        | 32        | 51        |                               |
+| Max. Schritte         | 558       | 298       | 324       | 709       |                               |
+| Futter gesamt         | 1212      | 802       | 1156      | 2419      |                               |
+| Schritte gesamt       | 20433     | 8442      | 12116     | 28963     |                               |
+| Anzahl if-Anweisungen | 9         | 4         | 8         | 20        | 1280 (?)                      |
