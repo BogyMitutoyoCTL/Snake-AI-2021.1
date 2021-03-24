@@ -1,0 +1,3202 @@
+[
+    {
+        "field": 0,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 0,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 0,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 0,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 0,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 1,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 1,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 1,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 1,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 1,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 2,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 2,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 2,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 2,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 2,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 3,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 3,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 3,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 3,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 3,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 4,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 4,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 4,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 4,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 4,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 5,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 5,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 5,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 5,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 5,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 6,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 6,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 6,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 6,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 6,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 7,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 7,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 7,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 7,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 7,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 8,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 8,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 8,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 8,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 8,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 9,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 9,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 9,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 9,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 9,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 10,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 10,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 10,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 10,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 10,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 11,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 11,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 11,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 11,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 11,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 12,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 12,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 12,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 12,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 12,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 13,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 13,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 13,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 13,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 13,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 14,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 14,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 14,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 14,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 14,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 15,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 15,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 15,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 15,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 15,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 16,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 16,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 16,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 16,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 16,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 17,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 17,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 17,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 17,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 17,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 18,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 18,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 18,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 18,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 18,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 19,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 19,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 19,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 19,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 19,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 20,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 20,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 20,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 20,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 20,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 21,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 21,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 21,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 21,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 21,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 22,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 22,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 22,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 22,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 22,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 23,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 23,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 23,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 23,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 23,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 24,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 24,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 24,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 24,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 24,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 25,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 25,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 25,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 25,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 25,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 26,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 26,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 26,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 26,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 26,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 27,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 27,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 27,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 27,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 27,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 28,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 28,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 28,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 28,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 28,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 29,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 29,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 29,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 29,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 29,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 30,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 30,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 30,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 30,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 30,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 31,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 31,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 31,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 31,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 31,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 32,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 32,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 32,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 32,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 32,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 33,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 33,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 33,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 33,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 33,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 34,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 34,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 34,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 34,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 34,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 35,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 35,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 35,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 35,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 35,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 36,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 36,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 36,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 36,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 36,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 37,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 37,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 37,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 37,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 37,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 38,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 38,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 38,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 38,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 38,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 39,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 39,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 39,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 39,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 39,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 40,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 40,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 40,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 40,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 40,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 41,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 41,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 41,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 41,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 41,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 42,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 42,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 42,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 42,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 42,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 43,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 43,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 43,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 43,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 43,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 44,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 44,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 44,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 44,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 44,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 45,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 45,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 45,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 45,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 45,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 46,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 46,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 46,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 46,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 46,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 47,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 47,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 47,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 47,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 47,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 48,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 48,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 48,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 48,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 48,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 49,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 49,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 49,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 49,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 49,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 50,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 50,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 50,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 50,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 50,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 51,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 51,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 51,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 51,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 51,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 52,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 52,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 52,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 52,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 52,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 53,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 53,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 53,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 53,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 53,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 54,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 54,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 54,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 54,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 54,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 55,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 55,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 55,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 55,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 55,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 56,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 56,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 56,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 56,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 56,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 57,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 57,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 57,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 57,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 57,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 58,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 58,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 58,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 58,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 58,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 59,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 59,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 59,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 59,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 59,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 60,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 60,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 60,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 60,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 60,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 61,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 61,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 61,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 61,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 61,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 62,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 62,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 62,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 62,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 62,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 63,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 63,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 63,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 63,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 63,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 64,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 64,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 64,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 64,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 64,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 65,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 65,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 65,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 65,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 65,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 66,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 66,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 66,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 66,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 66,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 67,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 67,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 67,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 67,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 67,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 68,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 68,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 68,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 68,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 68,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 69,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 69,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 69,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 69,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 69,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 70,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 70,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 70,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 70,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 70,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 71,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 71,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 71,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 71,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 71,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 72,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 72,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 72,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 72,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 72,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 73,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 73,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 73,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 73,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 73,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 74,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 74,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 74,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 74,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 74,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 75,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 75,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 75,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 75,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 75,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 76,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 76,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 76,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 76,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 76,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 77,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 77,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 77,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 77,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 77,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 78,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 78,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 78,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 78,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 78,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 79,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 79,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 79,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 79,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 79,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 80,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 80,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 80,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 80,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 80,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 81,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 81,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 81,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 81,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 81,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 82,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 82,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 82,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 82,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 82,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 83,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 83,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 83,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 83,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 83,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 84,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 84,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 84,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 84,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 84,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 85,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 85,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 85,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 85,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 85,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 86,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 86,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 86,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 86,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 86,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 87,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 87,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 87,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 87,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 87,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 88,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 88,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 88,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 88,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 88,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 89,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 89,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 89,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 89,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 89,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 90,
+        "food": 0,
+        "decision": "-"
+    },
+    {
+        "field": 90,
+        "food": 1,
+        "decision": "-"
+    },
+    {
+        "field": 90,
+        "food": 2,
+        "decision": "-"
+    },
+    {
+        "field": 90,
+        "food": 3,
+        "decision": "-"
+    },
+    {
+        "field": 90,
+        "food": 4,
+        "decision": "-"
+    },
+    {
+        "field": 91,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 91,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 91,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 91,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 91,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 92,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 92,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 92,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 92,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 92,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 93,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 93,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 93,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 93,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 93,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 94,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 94,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 94,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 94,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 94,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 95,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 95,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 95,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 95,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 95,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 96,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 96,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 96,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 96,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 96,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 97,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 97,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 97,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 97,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 97,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 98,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 98,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 98,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 98,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 98,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 99,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 99,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 99,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 99,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 99,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 100,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 100,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 100,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 100,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 100,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 101,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 101,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 101,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 101,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 101,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 102,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 102,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 102,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 102,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 102,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 103,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 103,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 103,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 103,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 103,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 104,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 104,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 104,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 104,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 104,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 105,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 105,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 105,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 105,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 105,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 106,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 106,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 106,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 106,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 106,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 107,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 107,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 107,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 107,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 107,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 108,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 108,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 108,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 108,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 108,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 109,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 109,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 109,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 109,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 109,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 110,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 110,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 110,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 110,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 110,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 111,
+        "food": 0,
+        "decision": "E"
+    },
+    {
+        "field": 111,
+        "food": 1,
+        "decision": "E"
+    },
+    {
+        "field": 111,
+        "food": 2,
+        "decision": "E"
+    },
+    {
+        "field": 111,
+        "food": 3,
+        "decision": "E"
+    },
+    {
+        "field": 111,
+        "food": 4,
+        "decision": "E"
+    },
+    {
+        "field": 112,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 112,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 112,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 112,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 112,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 113,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 113,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 113,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 113,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 113,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 114,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 114,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 114,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 114,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 114,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 115,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 115,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 115,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 115,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 115,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 116,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 116,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 116,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 116,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 116,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 117,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 117,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 117,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 117,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 117,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 118,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 118,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 118,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 118,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 118,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 119,
+        "food": 0,
+        "decision": "W"
+    },
+    {
+        "field": 119,
+        "food": 1,
+        "decision": "W"
+    },
+    {
+        "field": 119,
+        "food": 2,
+        "decision": "W"
+    },
+    {
+        "field": 119,
+        "food": 3,
+        "decision": "W"
+    },
+    {
+        "field": 119,
+        "food": 4,
+        "decision": "W"
+    },
+    {
+        "field": 120,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 120,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 120,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 120,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 120,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 121,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 121,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 121,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 121,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 121,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 122,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 122,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 122,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 122,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 122,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 123,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 123,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 123,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 123,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 123,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 124,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 124,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 124,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 124,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 124,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 125,
+        "food": 0,
+        "decision": "N"
+    },
+    {
+        "field": 125,
+        "food": 1,
+        "decision": "N"
+    },
+    {
+        "field": 125,
+        "food": 2,
+        "decision": "N"
+    },
+    {
+        "field": 125,
+        "food": 3,
+        "decision": "N"
+    },
+    {
+        "field": 125,
+        "food": 4,
+        "decision": "N"
+    },
+    {
+        "field": 126,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 126,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 126,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 126,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 126,
+        "food": 4,
+        "decision": "S"
+    },
+    {
+        "field": 127,
+        "food": 0,
+        "decision": "S"
+    },
+    {
+        "field": 127,
+        "food": 1,
+        "decision": "S"
+    },
+    {
+        "field": 127,
+        "food": 2,
+        "decision": "S"
+    },
+    {
+        "field": 127,
+        "food": 3,
+        "decision": "S"
+    },
+    {
+        "field": 127,
+        "food": 4,
+        "decision": "S"
+    }
+]
