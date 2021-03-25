@@ -101,9 +101,9 @@ class RecordPlaybackTW(Algorithm):
         richtung = int(alpha / beta)
         return richtung
 
-    def erzeuge_leeres_gehirn(self, aktionsanzahl, richtungsanzahl):
+    def erzeuge_leeres_gehirn(self, situationsanzahl, richtungsanzahl):
         gehirn = []
-        for a in range(aktionsanzahl):
+        for s in range(situationsanzahl):
             liste = []
             for r in range(richtungsanzahl):
                 liste.append(None)
