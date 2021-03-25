@@ -91,11 +91,9 @@ class MachineLearningTW(Algorithm):
         return wuerfel
 
     def entscheide(self, situationsnummer: int, grobe_richtung: int) -> str:
-        # TODO: 2D -> 3D
-        entscheidungen_in_situation = self.gehirn[situationsnummer]
-        entscheidung_fuer_richtung = entscheidungen_in_situation[grobe_richtung]
-
-        # Problem: wir bekommen N, E, S, W
-        woerterbuch = {"N": "north", "W": "west", "S": "south", "E": "east"}
-        uebersetzt = woerterbuch[entscheidung_fuer_richtung]
-        return uebersetzt
+        wuerfel = self.gehirn
+        scheibe = wuerfel[situationsnummer]
+        saeule = scheibe[grobe_richtung]
+        # Problem: wir bekommen Wahrscheinlichkeit / Zuversichtlichkeit
+        aktion = ... # TODO: beste Aktion bestimmen
+        return aktion
