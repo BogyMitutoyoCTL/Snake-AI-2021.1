@@ -73,10 +73,12 @@ class Visualization:
         self.text_color = [0, 255, 255]
         self._print_in_window(f"Epoch: {training.epoch} / {training.max_epochs}")
         self._print_in_window(f"Steps walked: {training.number_of_steps_walked} / {training.max_number_of_steps}")
-        self._print_in_window(f"Best score (snake length): {training.best_score}")
-        self._print_in_window(f"Best steps walked: {training.best_steps_walked}")
-        self._print_in_window(f"Total training steps (all epochs): {training.total_steps_walked}")
-        self._print_in_window(f"Total food eaten (all epochs): {training.total_food_eaten}")
+        self._print_in_window(f"↑ score (snake length): {training.best_score}")
+        self._print_in_window(f"↑ steps walked: {training.best_steps_walked}")
+        self._print_in_window(f"∑ training steps (all epochs): {training.total_steps_walked}")
+        self._print_in_window(f"∑ food eaten (all epochs): {training.total_food_eaten}")
+        self._print_in_window(f"Ø food eaten per epoch (all time): {(training.total_food_eaten / training.epoch):.2f}")
+        self._print_in_window(f"Ø food eaten per epoch (moving): {training.moving_average}")
         self._print_in_window(f"ε : {int(training.epsilon * 100)}%")
         self._print_in_window("")
 
@@ -90,7 +92,6 @@ class Visualization:
         self._print_in_window(f"Food direction: {info.food_direction}")
         self._print_in_window(f"Distance to food in steps: {info.food_distance_in_steps}")
         self._print_in_window(f"Air-line distance to food: {info.air_line_distance}")
-        self._print_in_window(f"")
         self._print_in_window(f"Wall distances:")
         self._print_in_window(f"     {info.walldistance_n}")
         self._print_in_window(f"{info.walldistance_w}      {info.walldistance_e}")
@@ -101,7 +102,7 @@ class Visualization:
         self._draw_field(info.field)
 
     def _print_in_window(self, text: str) -> None:
-        line_distance = 16
+        line_distance = 17
         self.current_print_y += line_distance
         pixels = self.font_style.render(text + "     ", True, self.text_color, [0, 0, 0])
         self.window.blit(pixels, [5, self.current_print_y])
