@@ -65,7 +65,7 @@ def show_gui(state, epoch: int):
         else:
             algorithm.visualize(state, env.training_data)
 
-        pygame.time.Clock().tick(5)
+        pygame.time.Clock().tick(2)
         pygame.event.pump()
         time_of_last_visualization = datetime.now()
 
@@ -78,6 +78,7 @@ if __name__ == "__main__":
 
     training_data: TrainingData = env.training_data
     training_data.max_epochs = 10
+
     training_data.verbose = True
 
     reward_system = RewardSystem()
@@ -89,7 +90,13 @@ if __name__ == "__main__":
     env.reward = reward_system
 
     algorithm = choose_algorithm()
-    algorithm.reward_system = reward_system
+    if algorithm.reward_system is None:
+        # Algorithmus hat kein Belohnungssystem
+        # Er übernimmt das Belohnungssystem des Spiels
+        algorithm.reward_system = reward_system
+    else:
+        # Algorithmus bringt das Belohnungssystem mit
+        env.reward = algorithm.reward_system
     algorithm = Visual(algorithm)
     randomness_algorithm = RandomChoice()
 
