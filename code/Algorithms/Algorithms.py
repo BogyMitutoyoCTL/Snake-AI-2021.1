@@ -3,12 +3,13 @@ from RewardSystem import RewardSystem
 from TrainingData import TrainingData
 from Visualization import Visualization
 from Field import Field
+from typing import Optional
 
 
 class Algorithm:
     def __init__(self):
         self.model = None
-        self.reward_system: RewardSystem = None
+        self.reward_system: Optional[RewardSystem] = None
 
     """
     This is the base class / interface for an algorithm.
