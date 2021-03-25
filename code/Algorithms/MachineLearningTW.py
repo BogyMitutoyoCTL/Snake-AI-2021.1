@@ -1,6 +1,9 @@
 from Algorithms.Algorithms import Algorithm
 from GameData import GameData
+from RewardSystem import RewardSystem
 
+import pickle
+import os
 
 class MachineLearningTW(Algorithm):
     def __init__(self):
@@ -10,9 +13,61 @@ class MachineLearningTW(Algorithm):
         self.maske = "01110 11111 11011 11111 01110"
         self.maske = self.maske.replace(" ", "")  # Leerzeichen sind nur für Menschen interessant
         self.anzahl_richtungen = 5
-        speicherplatzanzahl = 2 ** (self.maske.count("1"))
-        self.gehirn = self.erzeuge_leeres_gehirn(speicherplatzanzahl, self.anzahl_richtungen)
+        
+        self.dateiname = "gehirn.data"
+        self.gehirn = self.lade_gehirn_oder_lege_neu_an()
+        self.lernvorgange = 0
 
+        self.reward_system = RewardSystem()
+        # Belohnungen
+        self.reward_system.reward_eat_food = 1
+        self.reward_system.reward_win = 1
+        self.reward_system.reward_closer_function = lambda closer: 1 if closer > 0 else -1
+        # Bestrafungen
+        self.reward_system.reward_killed_by_wall = -1
+        self.reward_system.reward_killed_by_tail = -1
+        self.reward_system.reward_impossible_move = -1
+        self.reward_system.reward_killed_by_starving_function = lambda step, length: 0
+        
+        self.trainierte_epochen = 0
+
+    def lade_gehirn_oder_lege_neu_an(self):
+        if os.path.isfile(self.dateiname):
+            return self.lade_gehirn_aus_datei()
+        else:
+            speicherplatzanzahl = 2 ** (self.maske.count("1"))
+            return self.erzeuge_leeres_gehirn(speicherplatzanzahl, self.anzahl_richtungen)
+
+    def epochfinished(self) -> (object, float):
+        print("Lernvorgänge:", self.lernvorgange)
+        self.lernvorgange = 0
+
+        self.trainierte_epochen += 1
+        if self.trainierte_epochen % 100 == 0:
+            self.speichere_gehirn()
+        
+        return None, 0.0
+
+    def train(self, spielfeld: GameData, aktion: str, reward: float) -> None:
+        situationsnummer = self.umrechnen(spielfeld)
+        grobe_richtung = self.grobe_richtung(spielfeld.food_direction)
+        wuerfel = self.gehirn
+        scheibe = wuerfel[situationsnummer]
+        saeule = scheibe[grobe_richtung]
+
+        nachschlagewerk = {"north": 0, "east": 1, "south": 2, "west": 3}
+        nummer_der_aktion = nachschlagewerk[aktion]
+
+        self.lernvorgange += 1
+        if reward < 0:
+            # letzte Aktion abwerten
+            saeule[nummer_der_aktion] /= 1.1  # TODO: willkürlich gewählte Zahl
+        elif reward > 0:
+            # letzte Aktion belohnen
+            saeule[nummer_der_aktion] *= 1.1  # TODO: willkürlich gewählte Zahl
+        else:
+            # neutral - nix tun
+            pass
 
     def decide(self, spielfeld: GameData) -> str:
         # Schritt 1: Situationsnummer ausrechnen
@@ -95,5 +150,25 @@ class MachineLearningTW(Algorithm):
         scheibe = wuerfel[situationsnummer]
         saeule = scheibe[grobe_richtung]
         # Problem: wir bekommen Wahrscheinlichkeit / Zuversichtlichkeit
-        aktion = ... # TODO: beste Aktion bestimmen
+        groesster_wert = max(saeule)
+        if saeule[0] == groesster_wert:
+            aktion = "north"
+        elif saeule[1] == groesster_wert:
+            aktion = "east"
+        elif saeule[2] == groesster_wert:
+            aktion = "south"
+        elif saeule[3] == groesster_wert:
+            aktion = "west"
+        else:
+            raise Exception("Wie kann es sein, dass es keinen größten Wert gibt?")
+
         return aktion
+
+    def lade_gehirn_aus_datei(self):
+        with open(self.dateiname, "rb") as datei:
+            daten = pickle.load(datei)
+        return daten
+
+    def speichere_gehirn(self):
+        with open(self.dateiname, "wb") as datei:
+            pickle.dump(self.gehirn, datei)
