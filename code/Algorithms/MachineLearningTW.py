@@ -77,15 +77,18 @@ class MachineLearningTW(Algorithm):
         richtung = int(alpha / beta)
         return richtung
 
-    def erzeuge_leeres_gehirn(self, aktionsanzahl, richtungsanzahl):
-        # TODO: 2D --> 3D
-        gehirn = []
-        for a in range(aktionsanzahl):
-            liste = []
-            for r in range(richtungsanzahl):
-                liste.append(None)
-            gehirn.append(liste)
-        return gehirn
+    def erzeuge_leeres_gehirn(self, situationsanzahl, richtungsanzahl):
+        wuerfel = []
+        aktionsanzahl = 4
+        for _ in range(situationsanzahl):  # x-achse
+            scheibe = []
+            for _ in range(richtungsanzahl):  # y-achse
+                richtungs_saeule = []
+                for _ in range(aktionsanzahl):  # z-achse
+                    richtungs_saeule.append(0.5)  # TODO: das könnte auch zufällig sein
+                scheibe.append(richtungs_saeule)
+            wuerfel.append(scheibe)
+        return wuerfel
 
     def entscheide(self, situationsnummer: int, grobe_richtung: int) -> str:
         # TODO: 2D -> 3D
