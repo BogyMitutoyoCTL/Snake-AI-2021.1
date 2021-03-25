@@ -44,7 +44,8 @@ class MachineLearningTW(Algorithm):
 
         self.trainierte_epochen += 1
         if self.trainierte_epochen % 100 == 0:
-            self.speichere_gehirn()
+            # self.speichere_gehirn()
+            pass
         
         return None, 0.0
 
