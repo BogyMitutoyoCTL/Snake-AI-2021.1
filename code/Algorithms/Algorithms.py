@@ -8,7 +8,7 @@ from Field import Field
 class Algorithm:
     def __init__(self):
         self.model = None
-        self.reward_system:RewardSystem = None
+        self.reward_system: RewardSystem = None
 
     """
     This is the base class / interface for an algorithm.
@@ -48,6 +48,7 @@ class Algorithm:
         Can be used to visualize the thought process of the algorithm.
         It is not needed to visualize the game state. This can be done by the Gym alone.
         :param data: the state of the game, which may be needed to calculate the visualization.
+        :param training: statistical information about the training
         :return: None.
         """
         pass
@@ -83,8 +84,7 @@ class Visual(Algorithm):
     def train(self, info: GameData, action, reward) -> None:
         return self.decider.train(info, action, reward)
 
-    def visualize(self, data: GameData, training:TrainingData):
-
+    def visualize(self, data: GameData, training: TrainingData):
         layer = self.decider.visualize(data, training)
         self.vis.reset()
         self.vis.display_visualization_stats()
