@@ -628,11 +628,13 @@ def train(self, info: GameData, action, reward) -> None:
 Der Algorithmus kann auch sein eigenes Belohnungssystem bestimmen. Dazu definiert man die Eigenschaft `self.reward_system` , z.B.
 
 ```python
+from RewardSystem import RewardSystem
+...
 self.reward_system = RewardSystem()
 # Belohnungen
 self.reward_system.reward_eat_food = 1
 self.reward_system.reward_win = 1
-self.reward_system.reward_closer_function = lambda distance: 1 if distance > 0 else -1
+self.reward_system.reward_closer_function = lambda closer: 1 if closer > 0 else -1
 # Bestrafungen
 self.reward_system.reward_killed_by_wall = -1
 self.reward_system.reward_killed_by_tail = -1
