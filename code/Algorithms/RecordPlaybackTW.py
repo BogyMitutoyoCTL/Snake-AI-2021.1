@@ -5,7 +5,7 @@ import glob
 import json
 
 
-class QTableTW(Algorithm):
+class RecordPlaybackTW(Algorithm):
     def __init__(self):
         super().__init__()
         # Schritt 0: Gedächtnis auffrischen
@@ -15,9 +15,9 @@ class QTableTW(Algorithm):
         self.anzahl_richtungen = 5
         speicherplatzanzahl = 2 ** (self.maske.count("1"))
         self.gehirn = self.erzeuge_leeres_gehirn(speicherplatzanzahl, self.anzahl_richtungen)
-        self.lies_alle_dateien()
+        self.lies_gespeicherte_entscheidungen()
 
-    def lies_alle_dateien(self):
+    def lies_gespeicherte_entscheidungen(self):
         dateinamen = glob.glob("./decisionrecorder/[A-D].json")
         dateinamen.sort()
         for dateiname in dateinamen:
@@ -43,9 +43,8 @@ class QTableTW(Algorithm):
         situationsnummer = self.umrechnen(spielfeld)
         # Schritt 2: Nummer für die Richtung ausrechnen
         grobe_richtung = self.grobe_richtung(spielfeld.food_direction)
-        # Schritt 3: Greife auf eine Tabelle von Entscheidungen zu
+        # Schritt 3: Greife auf eine Tabelle von Entscheidungen (Gehirn) zu
         #            und suchen uns die Aktion raus, die ausgeführt werden soll
-        # TODO: Entscheidung raussuchen
         aktion = self.entscheide(situationsnummer, grobe_richtung)
         return aktion
 
@@ -61,8 +60,8 @@ class QTableTW(Algorithm):
         anzahl_ziffern = len(ausschnitt)
         for stelle in range(0, anzahl_ziffern):
             muss_beruecksichtigt_werden = maske[stelle]
-            ziffer = ausschnitt[stelle]
             if muss_beruecksichtigt_werden == "1":
+                ziffer = ausschnitt[stelle]
                 situationsnummer += ziffer * wertigkeit
                 wertigkeit *= 2  # Binärsystem
         return situationsnummer
