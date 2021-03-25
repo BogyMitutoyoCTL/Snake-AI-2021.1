@@ -12,13 +12,24 @@ class TrainingData:
         self.number_of_steps_walked: int = 0
         self.best_steps_walked: int = 0
         self.total_steps_walked: int = 0
-        self.last_score: int = sys.maxsize
+        self.last_score: int = 3
         self.verbose = verbose
         self.epsilon = 0
         self.create_time = datetime.now()
-        self.total_food_eaten = 0
+        self.total_food_eaten: int = 0
+        self.moving_average_length: int = 10
+        self.moving_average_history = [0] * self.moving_average_length
+
+    @property
+    def moving_average(self) -> str:
+        average = sum(self.moving_average_history) / self.moving_average_length
+        if average < 0.01:
+            average = 0
+        return f"{average:.2f}"
 
     def next_epoch(self):
+        self.moving_average_history.append(self.last_score-3)
+        self.moving_average_history = self.moving_average_history[1:]
         self.worst_score = min(self.last_score, self.worst_score)
         self.last_score = 3
         self.number_of_steps_walked = 0
@@ -34,7 +45,7 @@ class TrainingData:
             self.best_steps_walked = self.number_of_steps_walked
             if self.verbose:
                 now = self._formatted_now()
-                print(f"{now} - New record for number of steps walked: {self.best_steps_walked} in Epoche {self.epoch}")
+                print(f"{now} - Neuer Rekord: {self.best_steps_walked} gelaufene Schritte in Epoche {self.epoch}")
 
     @staticmethod
     def _formatted_now():
@@ -47,6 +58,8 @@ class TrainingData:
         description += f"Summe aller gelaufenen Schritte:     {self.total_steps_walked}\n"
         description += f"Bestes Ergebnis (Länge der Schlange): {self.best_score}\n"
         description += f"Schlechtestes Ergebnis (Länge der Schlange): {self.worst_score}\n"
+        description += f"Durchschnittlich pro Runde gegessen insgesamt: {self.total_food_eaten/self.epoch}\n"
+        description += f"Zuletzt durchschnittlich pro Runde gegessen: {self.moving_average}\n"
         description += f"Gesamtmenge gegessen: {self.total_food_eaten}\n"
         now = datetime.now()
         duration = int((now - self.create_time).total_seconds())
