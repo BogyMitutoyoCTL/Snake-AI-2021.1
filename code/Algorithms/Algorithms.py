@@ -31,7 +31,7 @@ class Algorithm:
         """
         return None, 0.0
 
-    def train(self, info: GameData, action, reward) -> None:
+    def train(self, info: GameData, action: str, reward: float) -> None:
         """
         This method can be used for training / optimizing the algorithm.
         Non-learning algorithms can ignore this method.

@@ -599,6 +599,13 @@ Warum erreicht unser Algorithmus keine besseren Ergebnisse?
 
 ## Donnerstag, 25.3.2021, Vormittag
 
+### Kleinere Umstrukturierungen
+
+Ein paar Kleinigkeiten sind mir noch aufgefallen:
+
+* Der Name der Klasse `QTableTW` ist noch nicht aussagekräftig. Ja, sie arbeitet irgendwie in Richtung QTables, aber der Begriff QTable sagt eigentlich aus, dass die Schlange selbst lernt. Das ist noch nicht der Fall. Es handelt sich eher um eine Art Record-Playback: wir haben Entscheidungen aufgezeichnet und spielen sie wieder ab.
+* Die Methode `lies_alle_dateien()` ist nicht wahrheitsgemäß: sie liest nicht alle Dateien, sondern nur JSON-Dateien und davon auch nur die mit Entscheidungen. Besser wäre `lies_aufgezeichnete_entscheidungen()`.
+
 ### Erweiterung des Blickfeldes
 
 Die Aufzeichnung unserer Entscheidungen für ein 3x3 Sichtfeld waren in Ordnung, brachten aber keine große Verbesserung in der Leistung der Schlange. Sie schneidet nur marginal besser ab als eine selbst programmierte Schlange mit 20 if-Anweisungen. Wir erhöhen daher die Sichtweite auf 5x5. Bei 83 Millionen Kombinationen aus Spielfeld und Futter soll der Computer dann selbst herausfinden, was gute und schlechte Entscheidungen sind.
@@ -616,9 +623,26 @@ def train(self, info: GameData, action, reward) -> None:
 
 `action` ist die durchgeführte Aktion.
 
-`reward` ist eine Zahl, deren Maßstab an anderer Stelle eingestellt werden kann. In der Standard-Einstellung bedeuten negative Werte schlechte Erlebnisse, positive Werte gute Erlebnisse. Es handelt sich um eine Summe von Erfahrungen wie z.B. Entfernung zum Futter (gering positiv), Fressen von Nahrung (hoch positiv) und Sterben (negativ, abhängig davon wie die Schlange stirbt).
+`reward` ist eine Zahl, deren Maßstab wir einstellen können. In der Standard-Einstellung bedeuten negative Werte schlechte Erlebnisse, positive Werte gute Erlebnisse. Es handelt sich um eine Summe von Erfahrungen wie z.B. Entfernung zum Futter (gering positiv), Fressen von Nahrung (hoch positiv) und Sterben (negativ, abhängig davon wie die Schlange stirbt).
 
-Es ist sinnvoll, die 3D-Struktur abzuspeichern und wieder zu laden, so dass die Schlange nicht immer von  Neuem anfangen muss zu lernen. Das Dateiformat JSON  ist dafür zu langsam heraus. Deshalb nutzen wir bei `pickle` und speichern erst nach einer gewissen Anzahl von Epochen, anstatt am Ende jedes Spiels. Die Dateigröße beträgt bei einem 5x5 Spielfeld und 5 Blickrichtungen ca. 230 MB.
+Der Algorithmus kann auch sein eigenes Belohnungssystem bestimmen. Dazu definiert man die Eigenschaft `self.reward_system` , z.B.
+
+```python
+from RewardSystem import RewardSystem
+...
+self.reward_system = RewardSystem()
+# Belohnungen
+self.reward_system.reward_eat_food = 1
+self.reward_system.reward_win = 1
+self.reward_system.reward_closer_function = lambda closer: 1 if closer > 0 else -1
+# Bestrafungen
+self.reward_system.reward_killed_by_wall = -1
+self.reward_system.reward_killed_by_tail = -1
+self.reward_system.reward_impossible_move = -1
+self.reward_system.reward_killed_by_starving_function = lambda step, length: 0
+```
+
+Es ist sinnvoll, die 3D-Struktur abzuspeichern und wieder zu laden, so dass die Schlange nicht immer von  Neuem anfangen muss zu lernen. Das Dateiformat JSON  ist dafür zu langsam. Deshalb nutzen wir bei `pickle` und speichern erst nach einer gewissen Anzahl von Epochen, anstatt am Ende jedes Spiels. Die Dateigröße beträgt bei einem 5x5 Spielfeld und 5 Blickrichtungen ca. 230 MB.
 
 Speichern und Laden funktioniert grundsätzlich so:
 
