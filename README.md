@@ -669,3 +669,41 @@ def epochfinished(self) -> (object, float):
 ### Aufgabe: Passe eine Kopie des 3x3 Algorithmus auf Selbstlernen an
 
 Kopiere den Algorithmus für das 3x3-Feld. Passe den Namen und die Werte auf ein 5x5-Feld an. Entferne die Funktion zum Einlesen von Daten aus JSON-Dateien. Erweitere dann den Algorithmus so, dass er Wahrscheinlichkeiten berücksichtigt und seine gelernten Erfolge alle 50 Epochen abspeichert. 
+
+## Donnerstag, 25.3.2021, Nacht
+
+In diesem BOGY wurde sogar nachts gearbeitet. Unermüdlich trainierten zwei Schlangen mehrere Stunden lang.
+
+## Freitag, 26.3.2021, Vormittag
+
+### Auswertung
+
+Die Schlange, die auf dem Rechner von T⸻ trainierte, hatte diesen Trainingsverlauf über 380000 Epochen:
+
+![Trainingsverlauf](presentation/trainingsverlauf.png)
+
+Zu Beginn des Trainings hat die Schlange scheinbar recht schnell gelernt, danach flachte die Lernkurve ab. Bei ca. 120000 Epochen sieht es dann nochmal nach einem "Aha-Effekt" aus.
+
+Allerdings zeigt die grafische Oberfläche auch die Menge des durchschnittlich gefressenen Futters an - und diese Zahlen sehen nicht besonders beeindruckend aus. Der gleitende Durchschnitt über die letzten 10 Epochen liegt knapp unter 14, entsprechend einer Schlangenlänge von 17.
+
+![Durchschnittswerte](presentation/trainingsverlauf_gui.png)
+
+### Abgespeichertes Gehirn nutzen
+
+
+
+### Ideen für bessere/andere Ergebnisse
+
+Es gibt noch allerhand Möglichkeiten, andere und ggf. bessere Ergebnisse zu erzielen:
+
+* Wir könnten die Trainingsdauer verlängern. Es ist anzunehmen, dass noch  nicht alle möglichen Möglichkeiten ausreichend von der Schlange erkundet wurden, insbesondere die Situationen, in denen sehr viele Kästchen belegt sind.
+* Das Sichtfeld der Schlange ist auch mit 5x5 noch ziemlich klein.
+* Die Einschätzung der Lage des Futters in 5 groben Richtungen reicht evtl. nicht aus, um eine gute Entscheidung zu treffen.
+* Wir könnten die Belohnungen und Bestrafungen anders verrechnen oder das Belohnungssystem anpassen. 
+* Hin und wieder zufällige Aktionen ausführen, um neue Wege zu entdecken, die die Schlange noch nie beschritten hat. Dieser Ansatz ist im Machine Learning bekannt und wird über die Variable ε (Epsilon) gesteuert.
+* Die letzte Aktion eines Spiels führt zwar zum unmittelbaren Tod der  Schlange und wird bestraft. Die fatale Entscheidung wurde vielleicht  jedoch schon zuvor getroffen, als die Schlange z.B. in eine Sackgasse  lief. Die "Bestrafung" für den Tod der Schlange könnte auf die  vorherigen Aktionen übertragen werden.
+
+Eine wesentliche Beschränkung bei dem von uns gewählten Ansatz ist allerdings die benötigte Speichermenge. Unser "Gehirn" der Schlange war so ausgelegt, dass sie alle Möglichkeiten für den Ausschnitt des Spielfelds im Kopf haben musste. Eine wesentliche Errungenschaft von Gehirnen ist allerdings das Vergessen. Dadurch wird Speicherplatz eingespart. 
+
+[Neuronale Netze](presentation/Neuronale%20Netze.pptx) kommen mit deutlich weniger Speicher aus.
+
