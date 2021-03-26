@@ -1,6 +1,6 @@
 
-gym
-pygame
+gym~=0.18.0
+pygame~=2.0.1
 #scipy
 #keras
 # We will use tensorflow 1.14, because for releases 1.14 and older, CPU and GPU packages are separate
@@ -13,3 +13,5 @@ numpy==1.16.6
 
 # TW: provides DQNAgent
 #keras-rl2==1.0.3
+future~=0.18.2
+Pillow~=7.2.0

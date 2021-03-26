@@ -3,9 +3,11 @@ import datetime
 from Algorithms.Algorithms import Algorithm
 from GameData import GameData
 from RewardSystem import RewardSystem
-
+import numpy as np
+from PIL import Image
 import pickle
 import os
+
 
 class MachineLearningJZ(Algorithm):
     def __init__(self):
@@ -15,7 +17,7 @@ class MachineLearningJZ(Algorithm):
         self.maske = "01110 11111 11011 11111 01110"
         self.maske = self.maske.replace(" ", "")  # Leerzeichen sind nur für Menschen interessant
         self.anzahl_richtungen = 5
-        
+
         self.dateiname = "gehirn.data"
         self.gehirn = self.lade_gehirn_oder_lege_neu_an()
         self.lernvorgange = 0
@@ -30,7 +32,7 @@ class MachineLearningJZ(Algorithm):
         self.reward_system.reward_killed_by_tail = -0.05
         self.reward_system.reward_impossible_move = -0.05
         self.reward_system.reward_killed_by_starving_function = lambda step, length: 0
-        
+
         self.trainierte_epochen = 0
 
     def lade_gehirn_oder_lege_neu_an(self):
@@ -41,14 +43,14 @@ class MachineLearningJZ(Algorithm):
             return self.erzeuge_leeres_gehirn(speicherplatzanzahl, self.anzahl_richtungen)
 
     def epochfinished(self) -> (object, float):
-        print("Lernvorgänge:", self.lernvorgange)
+        # print("Lernvorgänge:", self.lernvorgange)
         self.lernvorgange = 0
 
         self.trainierte_epochen += 1
-        if self.trainierte_epochen % 1000 == 0:
+        if self.trainierte_epochen % 500 == 0:
             self.speichere_gehirn()
             pass
-        
+
         return None, 0.0
 
     def train(self, spielfeld: GameData, aktion: str, reward: float) -> None:
@@ -177,7 +179,36 @@ class MachineLearningJZ(Algorithm):
         return daten
 
     def speichere_gehirn(self):
-        with open(self.dateiname, "wb") as datei:
-            pickle.dump(self.gehirn, datei)
-        with open(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S-') + self.dateiname, "wb") as datei:
-            pickle.dump(self.gehirn, datei)
+        breite = len(self.gehirn) // 1000
+        höhe = breite
+        bild = np.zeros((breite, höhe, 4), dtype=np.uint8)
+        print("Speicher für Bild angelegt...")
+        row = 0
+        index = 0
+        try:
+            for situation in self.gehirn:
+                for grobe_richtung in situation:
+                    grobe_richtung_norm = [i / max(grobe_richtung) for i in grobe_richtung]
+                    grobe_richtung_norm.sort()
+                    c = grobe_richtung_norm[0] * 255
+                    m = grobe_richtung_norm[1] * 255
+                    y = grobe_richtung_norm[2] * 255
+                    k = grobe_richtung_norm[3] * 255
+                    pixel = [np.uint8(c), np.uint8(m), np.uint8(y), np.uint8(k)]
+                    # print(pixel)
+                    bild[row][index] = pixel
+                    index += 1
+                    if index >= breite:
+                        index = 0
+                        row += 1
+                    if row >= höhe:
+                        raise StopIteration()
+
+        except StopIteration:
+            pass
+        print("Bilddaten generiert...")
+        img = Image.fromarray(bild, 'CMYK')
+        act_time = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+        dateiname = act_time + '-' + self.dateiname + '.jpg'
+        img.save(dateiname)
+        print("Bild in " + dateiname + " gespeichert...")
