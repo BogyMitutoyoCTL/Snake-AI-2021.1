@@ -690,7 +690,7 @@ Allerdings zeigt die grafische Oberfläche auch die Menge des durchschnittlich g
 
 ### Abgespeichertes Gehirn nutzen
 
-
+Das trainierte Gehirn schaffte eine maximale Länge von 34 in 100 Epochen und einen Durchschnittswert von 14 gegessenen Äpfeln pro Epoche.
 
 ### Ideen für bessere/andere Ergebnisse
 
@@ -703,7 +703,25 @@ Es gibt noch allerhand Möglichkeiten, andere und ggf. bessere Ergebnisse zu erz
 * Hin und wieder zufällige Aktionen ausführen, um neue Wege zu entdecken, die die Schlange noch nie beschritten hat. Dieser Ansatz ist im Machine Learning bekannt und wird über die Variable ε (Epsilon) gesteuert.
 * Die letzte Aktion eines Spiels führt zwar zum unmittelbaren Tod der  Schlange und wird bestraft. Die fatale Entscheidung wurde vielleicht  jedoch schon zuvor getroffen, als die Schlange z.B. in eine Sackgasse  lief. Die "Bestrafung" für den Tod der Schlange könnte auf die  vorherigen Aktionen übertragen werden.
 
+Den Epsilon-Ansatz haben wir schon vorbereitet. Er kann bei einem Algorithmus ergänzt werden, z.B.
+
+```python
+    def epsilon(self, epoch: int, maxepochs: int) -> float:
+        if epoch < maxepochs/2:
+            # In der ersten Trainingshälfte 30% Zufall verwenden
+            return 0.3
+        else:
+            # In der zweiten Trainingshälfte kein Zufall mehr
+            return 0.0
+```
+
 Eine wesentliche Beschränkung bei dem von uns gewählten Ansatz ist allerdings die benötigte Speichermenge. Unser "Gehirn" der Schlange war so ausgelegt, dass sie alle Möglichkeiten für den Ausschnitt des Spielfelds im Kopf haben musste. Eine wesentliche Errungenschaft von Gehirnen ist allerdings das Vergessen. Dadurch wird Speicherplatz eingespart. 
 
-[Neuronale Netze](presentation/Neuronale%20Netze.pptx) kommen mit deutlich weniger Speicher aus.
+### Neuronale Netze
+
+[Neuronale Netze](presentation/Neuronale%20Netze.pptx) kommen mit deutlich weniger Speicher aus. Sie arbeiten anhand der Idee einer Nervenzelle.
+
+Anhand des sehr anschaulichen Beispiel auf [playground.tensorflow.org](https://playground.tensorflow.org) und der Excel-Tabelle [Neuronales Netz Mathematik](presentation/NeuronalesNetz_tanh.xlsx) haben wir die Funktion eines Neurons und von Netzen hoffentlich gut  verstanden und konnten die Berechnungen der Webseite nachvollziehen.
+
+Schon schwieriger wird es mit der Darstellung von Netzen zur Bildverarbeitung.  Die [Webseite von Adam Harley](https://www.cs.ryerson.ca/~aharley/vis/conv/) hat dies mal für Handschrifterkennung von Ziffern versucht.
 
